@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Courses I have been teaching assistant on.
+description: I have worked as a teaching assistant on the following courses. 
 nav: true
 nav_order: 3
 ---
