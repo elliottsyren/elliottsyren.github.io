@@ -9,6 +9,4 @@ description: Curriculum Vitae
 
 ---
 
-PhD student in Economics, University of Gothenburg
-
 [Download my full CV (PDF)](/assets/pdf/cv.pdf)
