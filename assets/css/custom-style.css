@@ -1,1 +1,1 @@
-:root{--global-bg-color:#020817;--global-bg-color-dark:#010512;--navbar-bg-color:#010512;--footer-bg-color:#010512;--global-text-color:#e5e9f0;--global-link-color:#7ea4ff;--global-hover-color:#a8c3ff}
+:root{--global-bg-color:#020817;--global-bg-color-dark:#010512;--navbar-bg-color:#010512;--footer-bg-color:#010512;--global-text-color:#e5e9f0;--global-link-color:#7ea4ff;--global-hover-color:#a8c3ff}body{background:var(--global-bg-color)}
