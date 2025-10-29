@@ -29,6 +29,6 @@ latest_posts:
 
 I'm a PhD student in Economics at the University of Gothenburg. My research focuses on labour market integration and human capital accumulation among newly arrived immigrants in Sweden. I'm particularly interested in how institutional settings and policy design influence integration and labour market outcomes.
 
-Before starting my PhD, I a bachelor's degree in statistics and a master's degree in economics, both from Uppsala University. 
+Before starting my PhD, I obtained a bachelor's degree in statistics and a master's degree in economics, both from Uppsala University. 
 
 You can find my CV [here](/cv/) or [download it as a PDF](/assets/pdf/cv.pdf).
