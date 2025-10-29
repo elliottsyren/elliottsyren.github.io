@@ -1,0 +1,10 @@
+/* Deep navy theme — elegant and near-black */
+:root {
+  --global-bg-color: #020817;          /* page background */
+  --global-bg-color-dark: #010512;     /* darker sections */
+  --navbar-bg-color: #010512;          /* navbar background */
+  --footer-bg-color: #010512;          /* footer background */
+  --global-text-color: #e5e9f0;        /* soft white text */
+  --global-link-color: #7ea4ff;        /* gentle blue links */
+  --global-hover-color: #a8c3ff;       /* lighter hover */
+}
