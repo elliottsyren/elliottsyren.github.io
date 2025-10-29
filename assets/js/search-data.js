@@ -18,14 +18,14 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "Curriculum Vitae - Elliott Syrén, PhD student in Economics at the University of Gothenburg.",
+          description: "Curriculum Vitae",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
           },
         },{id: "nav-teaching",
           title: "teaching",
-          description: "Courses I have been teaching assistant on.",
+          description: "I have worked as a teaching assistant on the following courses.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
