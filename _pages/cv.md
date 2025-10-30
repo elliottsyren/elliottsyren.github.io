@@ -9,9 +9,14 @@ description: Curriculum Vitae
 
 ---
 
-<div style="position: relative; width: 100%; padding-top: 130%; overflow: hidden;">
+<div style="
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+">
   <iframe
-    src="/assets/pdf/cv.pdf"
+    src="/assets/pdf/cv.pdf#view=FitH"
     style="
       position: absolute;
       top: 0;
@@ -23,7 +28,7 @@ description: Curriculum Vitae
   ></iframe>
 </div>
 
-<p style="margin-top: 1em;">
+<p style="text-align: center; margin-top: 1em;">
   <a href="/assets/pdf/cv.pdf" target="_blank" style="text-decoration: none;">
     Download my full CV (PDF)
   </a>
