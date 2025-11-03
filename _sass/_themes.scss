@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Themes
+ * Themes – Electric Cyan & Deep Indigo
  ******************************************************************************/
 
 @use "sass:color";
@@ -7,70 +7,61 @@
 :root {
   color-scheme: dark;
 
-  /* Base background + text */
-  --global-bg-color: #020617;             /* deep navy-black */
-  --global-code-bg-color: #0a1120;        /* slightly lighter navy */
-  --global-text-color: #a5f3fc;           /* bright cyan for main text */
-  --global-text-color-light: #67e8f9;     /* lighter cyan for secondary text */
+  /* Base */
+  --global-bg-color: #010617;             /* deep navy-black */
+  --global-code-bg-color: #0b1120;        /* slightly lighter navy */
+  --global-text-color: #67e8f9;           /* bright cyan for all text */
+  --global-text-color-light: #22d3ee;     /* electric cyan for subtler items */
 
   /* Accents and links */
-  --global-theme-color: #67e8f9;          /* electric cyan accent */
-  --global-hover-color: #a5f3fc;          /* near-white cyan on hover */
-  --global-hover-text-color: #67e8f9;     /* hover text in bright cyan */
-  --global-link-color: #7dd3fc;           /* cyan links */
-  --global-highlight-color: #67e8f9;      /* highlight selections */
+  --global-theme-color: #5eead4;          /* vivid neon cyan accent */
+  --global-hover-color: #a5f3fc;          /* near-white cyan hover */
+  --global-hover-text-color: #5eead4;
+  --global-link-color: #67e8f9;
+  --global-highlight-color: #67e8f9;
 
-  /* Structure and contrast */
-  --global-border-color: #312e81;         /* indigo border */
-  --global-card-bg-color: #111633;        /* indigo-tinted panels */
-  --global-divider-color: rgba(103, 232, 249, 0.15); /* subtle cyan line */
+  /* Structural contrast */
+  --global-border-color: #312e81;         /* dark indigo */
+  --global-card-bg-color: #1e1b4b;        /* rich indigo surface */
+  --global-divider-color: rgba(94, 234, 212, 0.25); /* cyan line */
 
-  /* Footer and navbar */
-  --global-footer-bg-color: #0b0f25;      /* deep navy footer */
+  /* Footer & navigation */
+  --global-footer-bg-color: #111233;      /* indigo-navy blend */
   --global-footer-text-color: #67e8f9;
-  --global-footer-link-color: #a5f3fc;
+  --global-footer-link-color: #5eead4;
   --global-distill-app-color: #67e8f9;
 
-  /* Buttons / back-to-top / newsletter */
-  --global-back-to-top-bg-color: rgba(103, 232, 249, 0.4);
-  --global-back-to-top-text-color: #a5f3fc;
-  --global-newsletter-bg-color: #111633;
+  /* Buttons / utilities */
+  --global-back-to-top-bg-color: rgba(94, 234, 212, 0.5);
+  --global-back-to-top-text-color: #67e8f9;
+  --global-newsletter-bg-color: #1e1b4b;
   --global-newsletter-text-color: #67e8f9;
 
-  /* Tip/warning/danger blocks in cyan–indigo harmony */
-  --global-tip-block: #67e8f9;
-  --global-tip-block-bg: #111633;
-  --global-tip-block-text: #a5f3fc;
+  /* Tip/warning/danger blocks – indigo frame, cyan text */
+  --global-tip-block: #5eead4;
+  --global-tip-block-bg: #1e1b4b;
+  --global-tip-block-text: #67e8f9;
   --global-tip-block-title: #a5f3fc;
 
   --global-warning-block: #3730a3;
-  --global-warning-block-bg: #0b0f25;
-  --global-warning-block-text: #a5f3fc;
+  --global-warning-block-bg: #0f1028;
+  --global-warning-block-text: #67e8f9;
   --global-warning-block-title: #818cf8;
 
   --global-danger-block: #312e81;
-  --global-danger-block-bg: #0b0f25;
-  --global-danger-block-text: #a5f3fc;
+  --global-danger-block-bg: #0f1028;
+  --global-danger-block-text: #5eead4;
   --global-danger-block-title: #67e8f9;
 
-  /* Light/dark toggle icons — irrelevant but kept for integrity */
-  #light-toggle-system {
-    padding-left: 10px;
-    padding-top: 12px;
-    display: block;
-  }
-  #light-toggle-dark {
-    display: none;
-  }
-  #light-toggle-light {
-    display: none;
+  /* Optional glow for headings and links */
+  h1, h2, h3, h4, h5, h6, a, .post-title {
+    color: var(--global-text-color);
+    text-shadow: 0 0 6px rgba(103, 232, 249, 0.6);
   }
 
-  .only-light {
-    display: block;
-  }
-  .only-dark {
-    display: none;
+  body {
+    background-color: var(--global-bg-color);
+    color: var(--global-text-color);
   }
 
   #back-to-top {
@@ -82,4 +73,9 @@
     width: $back-to-top-width;
     z-index: $back-to-top-z-index;
   }
+
+  .only-light { display: block; }
+  .only-dark { display: none; }
+
+  #light-toggle-system, #light-toggle-dark, #light-toggle-light { display: none; }
 }
