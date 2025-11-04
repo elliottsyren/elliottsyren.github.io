@@ -1,5 +1,6 @@
 /*******************************************************************************
- * Theme – Clean Pale-Cyan on Deep Navy (no glow)
+ * Theme – Pale-Cyan on Deep Navy / Indigo (no glow)
+ * Complements assets/css/custom-style.css
  ******************************************************************************/
 
 @use "sass:color";
@@ -7,14 +8,14 @@
 :root {
   color-scheme: dark;
 
-  /* Backgrounds & surfaces */
+  /* Surfaces */
   --global-bg-color: #000814;
   --global-code-bg-color: #0a1025;
   --global-card-bg-color: #1e1b4b;
   --global-border-color: #312e81;
   --global-divider-color: rgba(201, 252, 255, 0.15);
 
-  /* Text / links / icons (no white, no glow) */
+  /* Text / links / accents */
   --global-text-color: #c9fcff;
   --global-text-color-light: #e8feff;
   --global-theme-color: #c9fcff;
@@ -23,7 +24,7 @@
   --global-link-color: #c9fcff;
   --global-highlight-color: #e8feff;
 
-  /* Footer / utility areas */
+  /* Footer / utilities */
   --global-footer-bg-color: #0b0f25;
   --global-footer-text-color: #c9fcff;
   --global-footer-link-color: #e8feff;
@@ -50,47 +51,22 @@
   --global-danger-block-text: #c9fcff;
   --global-danger-block-title: #e8feff;
 
-  /* Typography overrides (force cyan everywhere, no glow) */
-  body,
-  p,
-  li,
-  span,
-  strong,
-  em,
-  h1, h2, h3, h4, h5, h6,
-  a,
-  .navbar,
-  .navbar a,
-  .navbar-brand,
-  .nav-item > a,
-  .nav-item.active > a,
-  footer,
-  footer a,
-  .social-icons a,
-  .post-title {
-    color: var(--global-text-color) !important;
-    text-shadow: none !important;
-    filter: none !important;
+  /* Base typography — neutral, no glow */
+  body {
+    background-color: var(--global-bg-color);
+    color: var(--global-text-color);
   }
 
-  a:hover,
-  .navbar a:hover,
-  .social-icons a:hover,
-  .nav-item.active > a:hover {
-    color: var(--global-hover-color) !important;
-    text-shadow: none !important;
-    filter: none !important;
+  h1, h2, h3, h4, h5, h6, a, .post-title {
+    color: var(--global-text-color);
+    text-shadow: none;
+    filter: none;
   }
 
-  /* Back-to-top button */
-  #back-to-top {
-    color: var(--global-back-to-top-text-color);
-    background: var(--global-back-to-top-bg-color);
-    bottom: $back-to-top-bottom;
-    right: $back-to-top-right;
-    height: $back-to-top-height;
-    width: $back-to-top-width;
-    z-index: $back-to-top-z-index;
+  a:hover {
+    color: var(--global-hover-color);
+    text-shadow: none;
+    filter: none;
   }
 
   /* Disable theme toggles */
@@ -102,4 +78,15 @@
 
   .only-light { display: block; }
   .only-dark  { display: none; }
+
+  /* Back-to-top button */
+  #back-to-top {
+    color: var(--global-back-to-top-text-color);
+    background: var(--global-back-to-top-bg-color);
+    bottom: $back-to-top-bottom;
+    right: $back-to-top-right;
+    height: $back-to-top-height;
+    width: $back-to-top-width;
+    z-index: $back-to-top-z-index;
+  }
 }

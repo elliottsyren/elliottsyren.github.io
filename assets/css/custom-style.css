@@ -1,11 +1,65 @@
+/* ============================================================================
+   FINAL COLOUR OVERRIDE — Neon Pale Cyan on Deep Navy
+   This file loads last, so it overrides all Bootstrap and al-folio defaults.
+   ============================================================================ */
 
-:root{
-  --global-bg-color:#020817;
-  --global-bg-color-dark:#010512;
-  --navbar-bg-color:#010512;
-  --footer-bg-color:#010512;
-  --global-text-color:#e5e9f0;
-  --global-link-color:#7ea4ff;
-  --global-hover-color:#a8c3ff;
+:root {
+  --global-bg-color: #000814;
+  --global-card-bg-color: #1e1b4b;
+  --global-border-color: #312e81;
+  --global-text-color: #c9fcff;
+  --global-link-color: #c9fcff;
+  --global-hover-color: #e8feff;
 }
-body{background:var(--global-bg-color);}
+
+/* --- Reset all text colours to pale cyan --- */
+html, body, p, li, span, strong, em,
+h1, h2, h3, h4, h5, h6,
+a, a:visited, a:active,
+.navbar, .navbar a, .navbar-brand,
+.nav-item > a, .nav-item.active > a,
+footer, footer a, .social-icons a,
+.post-title, .post-content, .card, .card-body {
+  color: var(--global-text-color) !important;
+  text-shadow: none !important;
+  filter: none !important;
+  background-color: transparent;
+}
+
+/* --- Remove Bootstrap’s white or blue text utilities --- */
+[class*="text-white"],
+.text-light,
+.text-muted,
+.text-body,
+.text-secondary {
+  color: var(--global-text-color) !important;
+}
+
+/* --- Remove glow on hover --- */
+a:hover, .navbar a:hover, .social-icons a:hover, .nav-item.active > a:hover {
+  color: var(--global-hover-color) !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* --- Background colour enforcement --- */
+body {
+  background-color: var(--global-bg-color) !important;
+}
+
+/* --- Panels / cards --- */
+.card, .post-card, .highlight {
+  background-color: var(--global-card-bg-color) !important;
+  border-color: var(--global-border-color) !important;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--global-bg-color) !important;
+  color: var(--global-text-color) !important;
+}
+
+/* --- Optional: disable all transitions that cause hue flicker --- */
+* {
+  transition: none !important;
+}

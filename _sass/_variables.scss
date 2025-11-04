@@ -1,5 +1,6 @@
 /*******************************************************************************
- * Variables – Pale-Cyan on Deep Navy / Indigo
+ * Variables – Pale-Cyan / Deep-Blue Base Palette
+ * Complements assets/css/custom-style.css
  ******************************************************************************/
 
 @use "sass:color";
@@ -7,25 +8,25 @@
 // Core palette
 $blue-color: #0b1120 !default;           // indigo-blue
 $blue-color-dark: #000814 !default;      // almost-black navy
-$cyan-color: #c9fcff !default;           // pale cyan for all text
-$light-cyan-color: #e8feff !default;     // lighter hover cyan
+$cyan-color: #c9fcff !default;           // pale cyan for text
+$light-cyan-color: #e8feff !default;     // lighter cyan for hover
 
-// Indigo substitutes for legacy purple
+// Indigo for structural contrast
 $purple-color: #312e81 !default;
 $light-purple-color: #3730a3 !default;
 
-// Greys tuned to navy
+// Greys tuned to navy base
 $grey-color: #1e1b4b !default;
 $grey-color-light: #3730a3 !default;
 $grey-color-dark: #0a0d18 !default;
 $grey-900: #111633;
 
-// Bright cyan replaces white
+// Replace all “white” uses with cyan
 $white-color: #c9fcff !default;
 $black-color: #000814 !default;
 
 // Code backgrounds
-$code-bg-color-light: rgba($blue-color, 0.1);
+$code-bg-color-light: rgba($blue-color, 0.08);
 $code-bg-color-dark: #0a1025 !default;
 
 // Font/icon paths
