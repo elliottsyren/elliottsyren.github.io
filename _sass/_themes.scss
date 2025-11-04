@@ -1,90 +1,139 @@
-/*******************************************************************************
- * Themes – Neon Cyan on Deep-Blue / Indigo
- ******************************************************************************/
-
-@use "sass:color";
+// ===========================================================
+//  ACTIVE THEME (Dark Mode Disabled)
+//  Single :root block controls all colour variables.
+// ===========================================================
 
 :root {
-  color-scheme: dark;
+  // --- Base and text colours ---
+  --global-bg-color: #050616;
+  --global-code-bg-color: #1d1f5f;
+  --global-text-color: #00ffff;
+  --global-text-color-light: #66ffff;
 
-  /* Base */
-  --global-bg-color: #000814;            /* almost black deep blue */
-  --global-code-bg-color: #0a1025;       /* darker blue for code panels */
-  --global-text-color: #b9f6ff;          /* pale bright cyan (no white) */
-  --global-text-color-light: #e0fdff;    /* softer cyan for muted text */
+  // --- Accent and links ---
+  --global-theme-color: #00ffff;
+  --global-hover-color: #66ffff;
+  --global-hover-text-color: #050616;
+  --global-link-color: #00ffff;
+  --global-highlight-color: #00ffff;
 
-  /* Accent / links / hover */
-  --global-theme-color: #b9f6ff;
-  --global-hover-color: #e0fdff;
-  --global-hover-text-color: #b9f6ff;
-  --global-link-color: #b9f6ff;
-  --global-highlight-color: #e0fdff;
+  // --- Structure and depth ---
+  --global-card-bg-color: #1d1f5f;
+  --global-border-color: #2a2e80;
 
-  /* Structure / contrast */
-  --global-border-color: #312e81;        /* indigo for outlines */
-  --global-card-bg-color: #1e1b4b;       /* indigo panels */
-  --global-divider-color: rgba(185, 246, 255, 0.25);
+  // --- Footer, nav, and utilities ---
+  --global-footer-bg-color: #050616;
+  --global-footer-text-color: #00ffff;
+  --global-footer-link-color: #66ffff;
+  --global-back-to-top-bg-color: #2a2e80;
+  --global-back-to-top-text-color: #00ffff;
+  --global-newsletter-bg-color: #1d1f5f;
+  --global-newsletter-text-color: #00ffff;
 
-  /* Footer / nav */
-  --global-footer-bg-color: #0b0f25;     /* dark navy-indigo */
-  --global-footer-text-color: #b9f6ff;
-  --global-footer-link-color: #e0fdff;
-  --global-distill-app-color: #b9f6ff;
+  // --- Optional callout blocks (consistent tone) ---
+  --global-tip-block-bg-color: #1d1f5f;
+  --global-warning-block-bg-color: #1d1f5f;
+  --global-danger-block-bg-color: #1d1f5f;
+}
 
-  /* Buttons / newsletter */
-  --global-back-to-top-bg-color: rgba(185, 246, 255, 0.45);
-  --global-back-to-top-text-color: #b9f6ff;
-  --global-newsletter-bg-color: #1e1b4b;
-  --global-newsletter-text-color: #e0fdff;
+// ===========================================================
+//  TEXT AND LINK TREATMENT — No harsh glow, full cyan text.
+// ===========================================================
 
-  /* Info / warning / danger blocks */
-  --global-tip-block: #b9f6ff;
-  --global-tip-block-bg: #1e1b4b;
-  --global-tip-block-text: #e0fdff;
-  --global-tip-block-title: #e0fdff;
+// Base text — ensure all components use cyan
+body,
+h1, h2, h3, h4, h5, h6,
+p, li, span, div {
+  color: var(--global-text-color) !important;
+}
 
-  --global-warning-block: #3730a3;
-  --global-warning-block-bg: #0b0f25;
-  --global-warning-block-text: #b9f6ff;
-  --global-warning-block-title: #b9f6ff;
+// Remove residual whites (e.g. from older selectors)
+* {
+  color: var(--global-text-color) !important;
+}
 
-  --global-danger-block: #312e81;
-  --global-danger-block-bg: #0b0f25;
-  --global-danger-block-text: #b9f6ff;
-  --global-danger-block-title: #e0fdff;
+// Links and interactive elements
+a,
+.nav-link,
+footer a,
+.social-icons a {
+  color: var(--global-link-color) !important;
+  text-shadow: none !important; // remove strong glow
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
 
-  /* Text & headings */
-  body {
-    background-color: var(--global-bg-color);
-    color: var(--global-text-color);
-  }
+a:hover,
+.nav-link:hover,
+footer a:hover,
+.social-icons a:hover {
+  color: var(--global-hover-color) !important;
+  text-shadow: 0 0 3px rgba(0, 255, 255, 0.25); // subtle, crisp glow
+}
 
-  h1, h2, h3, h4, h5, h6, a, .post-title {
-    color: var(--global-text-color);
-    text-shadow: 0 0 8px rgba(185, 246, 255, 0.8);
-  }
+// Navigation highlight (selected item)
+.nav-link.active,
+.nav-item.active > a {
+  color: var(--global-hover-color) !important;
+  border-bottom: 2px solid var(--global-hover-color);
+  text-shadow: 0 0 2px rgba(0, 255, 255, 0.25);
+}
 
-  a:hover, h1:hover, h2:hover, h3:hover {
-    text-shadow: 0 0 14px rgba(224, 253, 255, 0.9);
-    transition: text-shadow 0.15s ease;
-  }
+// Social icons / buttons hover effect
+.social-icons a:hover {
+  filter: drop-shadow(0 0 3px rgba(0, 255, 255, 0.3));
+}
 
-  /* Back-to-top button */
-  #back-to-top {
-    color: var(--global-back-to-top-text-color);
-    background: var(--global-back-to-top-bg-color);
-    bottom: $back-to-top-bottom;
-    right: $back-to-top-right;
-    height: $back-to-top-height;
-    width: $back-to-top-width;
-    z-index: $back-to-top-z-index;
-  }
+// Optional: subtle cyan selection highlight
+::selection {
+  background: rgba(0, 255, 255, 0.3);
+  color: #050616;
+}
 
-  /* Light/dark toggles disabled */
-  #light-toggle-system, #light-toggle-dark, #light-toggle-light {
-    display: none;
-  }
+// ===========================================================
+//  PANELS, CARDS, DIVIDERS — add visible indigo depth.
+// ===========================================================
 
-  .only-light { display: block; }
-  .only-dark  { display: none; }
+.card,
+.panel,
+section,
+div[class*="card"],
+div[class*="panel"] {
+  background-color: var(--global-card-bg-color) !important;
+  border: 1px solid var(--global-border-color) !important;
+  box-shadow: 0 0 6px rgba(42, 46, 128, 0.4);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+// Footer consistency
+footer {
+  background-color: var(--global-footer-bg-color);
+  color: var(--global-footer-text-color);
+}
+
+footer a:hover {
+  color: var(--global-hover-color);
+}
+
+// ===========================================================
+//  CLEAN EDGE — no blurs, no excessive glow anywhere.
+// ===========================================================
+
+button,
+input,
+textarea {
+  color: var(--global-text-color);
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-border-color);
+}
+
+button:hover,
+input:hover,
+textarea:hover,
+button:focus,
+input:focus,
+textarea:focus {
+  color: var(--global-hover-color);
+  border-color: var(--global-hover-color);
+  outline: none;
 }
