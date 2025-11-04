@@ -1,18 +1,18 @@
 /* ============================================================================
-   FINAL COLOUR OVERRIDE — Bright Cyan-White Text + Indigo Links on Deep Navy
-   This file loads last, overriding all Bootstrap and al-folio defaults.
+   FINAL COLOUR OVERRIDE — Bright Near-White Cyan Text + Muted Indigo Links
+   This file loads last and overrides all Bootstrap and al-folio defaults.
    ============================================================================ */
 
 :root {
   --global-bg-color: #000814;         /* deep navy background */
   --global-card-bg-color: #1e1b4b;    /* indigo panels */
   --global-border-color: #312e81;     /* darker indigo borders */
-  --global-text-color: #edfefe;       /* near-white cyan text */
-  --global-link-color: #3730a3;       /* indigo link colour */
-  --global-hover-color: #4f46e5;      /* brighter indigo hover */
+  --global-text-color: #ebffff;       /* bright near-white cyan text */
+  --global-link-color: #3f3bb8;       /* slightly softened indigo link */
+  --global-hover-color: #5551d9;      /* lighter indigo hover */
 }
 
-/* --- Reset all text to bright cyan-white --- */
+/* --- Reset all text colours --- */
 html, body, p, li, span, strong, em,
 h1, h2, h3, h4, h5, h6,
 .navbar, .navbar a, .navbar-brand,
@@ -30,7 +30,10 @@ a, a:visited, a:active {
   color: var(--global-link-color) !important;
   text-decoration: none;
 }
-a:hover, .navbar a:hover, .social-icons a:hover, .nav-item.active > a:hover {
+a:hover,
+.navbar a:hover,
+.social-icons a:hover,
+.nav-item.active > a:hover {
   color: var(--global-hover-color) !important;
   text-shadow: none !important;
   filter: none !important;
@@ -63,7 +66,7 @@ footer {
   color: var(--global-text-color) !important;
 }
 
-/* --- Disable transitions that cause hue flicker --- */
+/* --- Optional: disable flicker / animation --- */
 * {
   transition: none !important;
 }

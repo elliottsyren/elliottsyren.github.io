@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Theme – Bright Cyan-White Text & Indigo Links
- * Complements assets/css/custom-style.css
+ * Final version matching custom-style.css
  ******************************************************************************/
 
 @use "sass:color";
@@ -12,44 +12,44 @@
   --global-bg-color: #000814;
   --global-code-bg-color: #0a1025;
   --global-card-bg-color: #1e1b4b;
-  --global-border-color: #312e81;
-  --global-divider-color: rgba(233, 253, 255, 0.15);
+  --global-border-color: #2d2a76;
+  --global-divider-color: rgba(235, 255, 255, 0.15);
 
   /* Text and accents */
-  --global-text-color: #e9fdff;          /* bright cyan-white text */
-  --global-text-color-light: #f4feff;
-  --global-theme-color: #3730a3;         /* indigo for links */
-  --global-hover-color: #4f46e5;         /* brighter indigo hover */
-  --global-hover-text-color: #e9fdff;
-  --global-link-color: #3730a3;
-  --global-highlight-color: #4f46e5;
+  --global-text-color: #ebffff;
+  --global-text-color-light: #f6ffff;
+  --global-theme-color: #3f3bb8;       /* indigo for links */
+  --global-hover-color: #5551d9;       /* brighter indigo hover */
+  --global-hover-text-color: #ebffff;
+  --global-link-color: #3f3bb8;
+  --global-highlight-color: #5551d9;
 
   /* Footer / utilities */
   --global-footer-bg-color: #0b0f25;
-  --global-footer-text-color: #e9fdff;
-  --global-footer-link-color: #4f46e5;
-  --global-distill-app-color: #3730a3;
+  --global-footer-text-color: #ebffff;
+  --global-footer-link-color: #5551d9;
+  --global-distill-app-color: #3f3bb8;
 
-  --global-back-to-top-bg-color: rgba(55, 48, 163, 0.3);
-  --global-back-to-top-text-color: #e9fdff;
+  --global-back-to-top-bg-color: rgba(63, 59, 184, 0.3);
+  --global-back-to-top-text-color: #ebffff;
   --global-newsletter-bg-color: #1e1b4b;
-  --global-newsletter-text-color: #f4feff;
+  --global-newsletter-text-color: #f6ffff;
 
   /* Info / warning / danger blocks */
-  --global-tip-block: #3730a3;
+  --global-tip-block: #3f3bb8;
   --global-tip-block-bg: #1e1b4b;
-  --global-tip-block-text: #e9fdff;
-  --global-tip-block-title: #f4feff;
+  --global-tip-block-text: #ebffff;
+  --global-tip-block-title: #f6ffff;
 
-  --global-warning-block: #4f46e5;
+  --global-warning-block: #5551d9;
   --global-warning-block-bg: #0b0f25;
-  --global-warning-block-text: #e9fdff;
-  --global-warning-block-title: #f4feff;
+  --global-warning-block-text: #ebffff;
+  --global-warning-block-title: #f6ffff;
 
   --global-danger-block: #312e81;
   --global-danger-block-bg: #0b0f25;
-  --global-danger-block-text: #e9fdff;
-  --global-danger-block-title: #f4feff;
+  --global-danger-block-text: #ebffff;
+  --global-danger-block-title: #f6ffff;
 
   /* Base text – neutral, no glow */
   body {
