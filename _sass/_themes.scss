@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Theme – Pale-Cyan on Deep Navy / Indigo (no glow)
+ * Theme – Bright Cyan-White Text & Indigo Links
  * Complements assets/css/custom-style.css
  ******************************************************************************/
 
@@ -13,45 +13,45 @@
   --global-code-bg-color: #0a1025;
   --global-card-bg-color: #1e1b4b;
   --global-border-color: #312e81;
-  --global-divider-color: rgba(201, 252, 255, 0.15);
+  --global-divider-color: rgba(233, 253, 255, 0.15);
 
-  /* Text / links / accents */
-  --global-text-color: #c9fcff;
-  --global-text-color-light: #e8feff;
-  --global-theme-color: #c9fcff;
-  --global-hover-color: #e8feff;
-  --global-hover-text-color: #c9fcff;
-  --global-link-color: #c9fcff;
-  --global-highlight-color: #e8feff;
+  /* Text and accents */
+  --global-text-color: #e9fdff;          /* bright cyan-white text */
+  --global-text-color-light: #f4feff;
+  --global-theme-color: #3730a3;         /* indigo for links */
+  --global-hover-color: #4f46e5;         /* brighter indigo hover */
+  --global-hover-text-color: #e9fdff;
+  --global-link-color: #3730a3;
+  --global-highlight-color: #4f46e5;
 
   /* Footer / utilities */
   --global-footer-bg-color: #0b0f25;
-  --global-footer-text-color: #c9fcff;
-  --global-footer-link-color: #e8feff;
-  --global-distill-app-color: #c9fcff;
+  --global-footer-text-color: #e9fdff;
+  --global-footer-link-color: #4f46e5;
+  --global-distill-app-color: #3730a3;
 
-  --global-back-to-top-bg-color: rgba(201, 252, 255, 0.25);
-  --global-back-to-top-text-color: #c9fcff;
+  --global-back-to-top-bg-color: rgba(55, 48, 163, 0.3);
+  --global-back-to-top-text-color: #e9fdff;
   --global-newsletter-bg-color: #1e1b4b;
-  --global-newsletter-text-color: #e8feff;
+  --global-newsletter-text-color: #f4feff;
 
   /* Info / warning / danger blocks */
-  --global-tip-block: #c9fcff;
+  --global-tip-block: #3730a3;
   --global-tip-block-bg: #1e1b4b;
-  --global-tip-block-text: #e8feff;
-  --global-tip-block-title: #e8feff;
+  --global-tip-block-text: #e9fdff;
+  --global-tip-block-title: #f4feff;
 
-  --global-warning-block: #3730a3;
+  --global-warning-block: #4f46e5;
   --global-warning-block-bg: #0b0f25;
-  --global-warning-block-text: #c9fcff;
-  --global-warning-block-title: #c9fcff;
+  --global-warning-block-text: #e9fdff;
+  --global-warning-block-title: #f4feff;
 
   --global-danger-block: #312e81;
   --global-danger-block-bg: #0b0f25;
-  --global-danger-block-text: #c9fcff;
-  --global-danger-block-title: #e8feff;
+  --global-danger-block-text: #e9fdff;
+  --global-danger-block-title: #f4feff;
 
-  /* Base typography — neutral, no glow */
+  /* Base text – neutral, no glow */
   body {
     background-color: var(--global-bg-color);
     color: var(--global-text-color);
@@ -63,10 +63,14 @@
     filter: none;
   }
 
-  a:hover {
+  a, .navbar a, .social-icons a, .nav-item > a {
+    color: var(--global-theme-color);
+    text-shadow: none;
+  }
+
+  a:hover, .navbar a:hover, .social-icons a:hover, .nav-item > a:hover {
     color: var(--global-hover-color);
     text-shadow: none;
-    filter: none;
   }
 
   /* Disable theme toggles */
