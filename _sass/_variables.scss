@@ -1,40 +1,26 @@
 /*******************************************************************************
- * Variables used throughout the theme.
- * Neon-Cyan / Deep-Blue palette
+ * Variables – Pale-Cyan on Deep Navy / Indigo
  ******************************************************************************/
 
 @use "sass:color";
 
-// Base palette
-$blue-color: #0b1120 !default;           // deep blue-indigo
+// Core palette
+$blue-color: #0b1120 !default;           // indigo-blue
 $blue-color-dark: #000814 !default;      // almost-black navy
-$cyan-color: #c9fcff !default;           // pale, near-white cyan
-$light-cyan-color: #e8feff !default;     // even lighter cyan for hover
+$cyan-color: #c9fcff !default;           // pale cyan for all text
+$light-cyan-color: #e8feff !default;     // lighter hover cyan
 
-// Secondary (keep for compatibility)
-$red-color: #ff3636 !default;
-$red-color-dark: #b71c1c !default;
-$orange-color: #f29105 !default;
-$green-color: #00ab37 !default;
-$green-color-lime: #b7d12a !default;
-$green-color-dark: #009f06 !default;
-$green-color-light: #ddffdd !default;
-$green-color-bright: #11d68b !default;
-
-// Indigo for former "purple" refs
+// Indigo substitutes for legacy purple
 $purple-color: #312e81 !default;
 $light-purple-color: #3730a3 !default;
-$pink-color: #f92080 !default;
-$pink-color-light: #ffdddd !default;
-$yellow-color: #efcc00 !default;
 
-// Greys and neutrals tuned to dark-indigo base
+// Greys tuned to navy
 $grey-color: #1e1b4b !default;
 $grey-color-light: #3730a3 !default;
 $grey-color-dark: #0a0d18 !default;
 $grey-900: #111633;
 
-// Bright cyan replaces white completely
+// Bright cyan replaces white
 $white-color: #c9fcff !default;
 $black-color: #000814 !default;
 
