@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Theme – Bright Cyan-White Text & Indigo Links
- * Final version matching custom-style.css
+ * Theme – Bright Cyan-White Text & Pale Indigo Links
+ * Matches custom-style.css
  ******************************************************************************/
 
 @use "sass:color";
@@ -8,48 +8,29 @@
 :root {
   color-scheme: dark;
 
-  /* Surfaces */
   --global-bg-color: #000814;
   --global-code-bg-color: #0a1025;
   --global-card-bg-color: #1e1b4b;
   --global-border-color: #2d2a76;
   --global-divider-color: rgba(235, 255, 255, 0.15);
 
-  /* Text and accents */
   --global-text-color: #ebffff;
   --global-text-color-light: #f6ffff;
-  --global-theme-color: #3f3bb8;       /* indigo for links */
-  --global-hover-color: #5551d9;       /* brighter indigo hover */
+  --global-theme-color: #7c7cff;       /* pale indigo links */
+  --global-hover-color: #9b9bff;       /* lighter hover */
   --global-hover-text-color: #ebffff;
-  --global-link-color: #3f3bb8;
-  --global-highlight-color: #5551d9;
+  --global-link-color: #7c7cff;
+  --global-highlight-color: #9b9bff;
 
-  /* Footer / utilities */
   --global-footer-bg-color: #0b0f25;
   --global-footer-text-color: #ebffff;
-  --global-footer-link-color: #5551d9;
-  --global-distill-app-color: #3f3bb8;
+  --global-footer-link-color: #9b9bff;
+  --global-distill-app-color: #7c7cff;
 
-  --global-back-to-top-bg-color: rgba(63, 59, 184, 0.3);
+  --global-back-to-top-bg-color: rgba(124, 124, 255, 0.3);
   --global-back-to-top-text-color: #ebffff;
   --global-newsletter-bg-color: #1e1b4b;
   --global-newsletter-text-color: #f6ffff;
-
-  /* Info / warning / danger blocks */
-  --global-tip-block: #3f3bb8;
-  --global-tip-block-bg: #1e1b4b;
-  --global-tip-block-text: #ebffff;
-  --global-tip-block-title: #f6ffff;
-
-  --global-warning-block: #5551d9;
-  --global-warning-block-bg: #0b0f25;
-  --global-warning-block-text: #ebffff;
-  --global-warning-block-title: #f6ffff;
-
-  --global-danger-block: #312e81;
-  --global-danger-block-bg: #0b0f25;
-  --global-danger-block-text: #ebffff;
-  --global-danger-block-title: #f6ffff;
 
   /* Base text – neutral, no glow */
   body {
@@ -73,6 +54,14 @@
     text-shadow: none;
   }
 
+  /* Specific override for active tab (lighter tone) */
+  .nav-item.active > a,
+  .navbar-nav .nav-link.active,
+  .navbar-nav .show > .nav-link {
+    color: #8686ff;
+    text-shadow: none;
+  }
+
   /* Disable theme toggles */
   #light-toggle-system,
   #light-toggle-dark,
@@ -83,7 +72,6 @@
   .only-light { display: block; }
   .only-dark  { display: none; }
 
-  /* Back-to-top button */
   #back-to-top {
     color: var(--global-back-to-top-text-color);
     background: var(--global-back-to-top-bg-color);

@@ -1,31 +1,30 @@
 /* ============================================================================
-   FINAL COLOUR OVERRIDE — Bright Near-White Cyan Text + Muted Indigo Links
-   This file loads last and overrides all Bootstrap and al-folio defaults.
+   FINAL COLOUR OVERRIDE — Bright Cyan-White Text + Refined Pale Indigo Links
    ============================================================================ */
 
 :root {
-  --global-bg-color: #000814;         /* deep navy background */
-  --global-card-bg-color: #1e1b4b;    /* indigo panels */
-  --global-border-color: #312e81;     /* darker indigo borders */
-  --global-text-color: #ebffff;       /* bright near-white cyan text */
-  --global-link-color: #3f3bb8;       /* slightly softened indigo link */
-  --global-hover-color: #5551d9;      /* lighter indigo hover */
+  --global-bg-color: #000814;
+  --global-card-bg-color: #1e1b4b;
+  --global-border-color: #2d2a76;
+  --global-text-color: #ebffff;       /* near-white cyan text */
+  --global-link-color: #7c7cff;       /* pale indigo link */
+  --global-hover-color: #9b9bff;      /* slightly lighter hover */
 }
 
 /* --- Reset all text colours --- */
 html, body, p, li, span, strong, em,
 h1, h2, h3, h4, h5, h6,
 .navbar, .navbar a, .navbar-brand,
-.nav-item > a, .nav-item.active > a,
-footer, footer a, .social-icons a,
-.post-title, .post-content, .card, .card-body {
+.nav-item > a, footer, footer a,
+.social-icons a, .post-title, .post-content,
+.card, .card-body {
   color: var(--global-text-color) !important;
   text-shadow: none !important;
   filter: none !important;
   background-color: transparent;
 }
 
-/* --- Standard link colours --- */
+/* --- Links --- */
 a, a:visited, a:active {
   color: var(--global-link-color) !important;
   text-decoration: none;
@@ -33,14 +32,22 @@ a, a:visited, a:active {
 a:hover,
 .navbar a:hover,
 .social-icons a:hover,
-.nav-item.active > a:hover {
+.nav-item > a:hover {
   color: var(--global-hover-color) !important;
   text-shadow: none !important;
   filter: none !important;
   text-decoration: underline;
 }
 
-/* --- Remove Bootstrap’s white / grey text utilities --- */
+/* --- Specific: active (selected) navbar tab --- */
+.nav-item.active > a,
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: #8686ff !important;  /* softer mid-indigo for active tab */
+  text-decoration: none !important;
+}
+
+/* --- Remove Bootstrap’s white/grey utilities --- */
 [class*="text-white"],
 .text-light,
 .text-muted,
@@ -66,7 +73,7 @@ footer {
   color: var(--global-text-color) !important;
 }
 
-/* --- Optional: disable flicker / animation --- */
+/* --- Disable flicker / animation --- */
 * {
   transition: none !important;
 }

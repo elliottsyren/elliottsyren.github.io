@@ -1,39 +1,32 @@
 /*******************************************************************************
- * Variables – Bright Near-White Cyan / Muted Indigo
- * Final version matching custom-style.css
+ * Variables – Pale Indigo & Bright Cyan-White Text
+ * Matches custom-style.css
  ******************************************************************************/
 
 @use "sass:color";
 
-// Core palette
-$blue-color: #0b1120 !default;           // deep indigo-blue
-$blue-color-dark: #000814 !default;      // almost-black navy
-$cyan-color: #ebffff !default;           // bright near-white cyan for text
-$light-cyan-color: #f6ffff !default;     // very light cyan hover tint
+$blue-color: #0b1120 !default;
+$blue-color-dark: #000814 !default;
+$cyan-color: #ebffff !default;
+$light-cyan-color: #f6ffff !default;
 
-// Indigo for links and accents
-$purple-color: #3f3bb8 !default;         // link indigo
-$light-purple-color: #5551d9 !default;   // hover indigo
+$purple-color: #7c7cff !default;        // link indigo (pale)
+$light-purple-color: #9b9bff !default;  // hover indigo
 
-// Greys tuned to navy base
 $grey-color: #1e1b4b !default;
 $grey-color-light: #3730a3 !default;
 $grey-color-dark: #0a0d18 !default;
 $grey-900: #111633;
 
-// Replace white with bright cyan-white
 $white-color: #ebffff !default;
 $black-color: #000814 !default;
 
-// Code backgrounds
 $code-bg-color-light: rgba($blue-color, 0.08);
 $code-bg-color-dark: #0a1025 !default;
 
-// Font/icon paths
 $fa-font-path: "../webfonts";
 $ti-font-path: "../fonts";
 
-// Back-to-top button config
 $back-to-top-z-index: 10;
 $back-to-top-bottom: 30px;
 $back-to-top-right: 30px;
