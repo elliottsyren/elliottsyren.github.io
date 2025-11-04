@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Themes – Electric Cyan & Deep Indigo
+ * Themes – Neon Cyan on Deep-Blue / Indigo
  ******************************************************************************/
 
 @use "sass:color";
@@ -8,62 +8,68 @@
   color-scheme: dark;
 
   /* Base */
-  --global-bg-color: #010617;             /* deep navy-black */
-  --global-code-bg-color: #0b1120;        /* slightly lighter navy */
-  --global-text-color: #67e8f9;           /* bright cyan for all text */
-  --global-text-color-light: #22d3ee;     /* electric cyan for subtler items */
+  --global-bg-color: #000814;            /* almost black deep blue */
+  --global-code-bg-color: #0a1025;       /* darker blue for code panels */
+  --global-text-color: #b9f6ff;          /* pale bright cyan (no white) */
+  --global-text-color-light: #e0fdff;    /* softer cyan for muted text */
 
-  /* Accents and links */
-  --global-theme-color: #5eead4;          /* vivid neon cyan accent */
-  --global-hover-color: #a5f3fc;          /* near-white cyan hover */
-  --global-hover-text-color: #5eead4;
-  --global-link-color: #67e8f9;
-  --global-highlight-color: #67e8f9;
+  /* Accent / links / hover */
+  --global-theme-color: #b9f6ff;
+  --global-hover-color: #e0fdff;
+  --global-hover-text-color: #b9f6ff;
+  --global-link-color: #b9f6ff;
+  --global-highlight-color: #e0fdff;
 
-  /* Structural contrast */
-  --global-border-color: #312e81;         /* dark indigo */
-  --global-card-bg-color: #1e1b4b;        /* rich indigo surface */
-  --global-divider-color: rgba(94, 234, 212, 0.25); /* cyan line */
+  /* Structure / contrast */
+  --global-border-color: #312e81;        /* indigo for outlines */
+  --global-card-bg-color: #1e1b4b;       /* indigo panels */
+  --global-divider-color: rgba(185, 246, 255, 0.25);
 
-  /* Footer & navigation */
-  --global-footer-bg-color: #111233;      /* indigo-navy blend */
-  --global-footer-text-color: #67e8f9;
-  --global-footer-link-color: #5eead4;
-  --global-distill-app-color: #67e8f9;
+  /* Footer / nav */
+  --global-footer-bg-color: #0b0f25;     /* dark navy-indigo */
+  --global-footer-text-color: #b9f6ff;
+  --global-footer-link-color: #e0fdff;
+  --global-distill-app-color: #b9f6ff;
 
-  /* Buttons / utilities */
-  --global-back-to-top-bg-color: rgba(94, 234, 212, 0.5);
-  --global-back-to-top-text-color: #67e8f9;
+  /* Buttons / newsletter */
+  --global-back-to-top-bg-color: rgba(185, 246, 255, 0.45);
+  --global-back-to-top-text-color: #b9f6ff;
   --global-newsletter-bg-color: #1e1b4b;
-  --global-newsletter-text-color: #67e8f9;
+  --global-newsletter-text-color: #e0fdff;
 
-  /* Tip/warning/danger blocks – indigo frame, cyan text */
-  --global-tip-block: #5eead4;
+  /* Info / warning / danger blocks */
+  --global-tip-block: #b9f6ff;
   --global-tip-block-bg: #1e1b4b;
-  --global-tip-block-text: #67e8f9;
-  --global-tip-block-title: #a5f3fc;
+  --global-tip-block-text: #e0fdff;
+  --global-tip-block-title: #e0fdff;
 
   --global-warning-block: #3730a3;
-  --global-warning-block-bg: #0f1028;
-  --global-warning-block-text: #67e8f9;
-  --global-warning-block-title: #818cf8;
+  --global-warning-block-bg: #0b0f25;
+  --global-warning-block-text: #b9f6ff;
+  --global-warning-block-title: #b9f6ff;
 
   --global-danger-block: #312e81;
-  --global-danger-block-bg: #0f1028;
-  --global-danger-block-text: #5eead4;
-  --global-danger-block-title: #67e8f9;
+  --global-danger-block-bg: #0b0f25;
+  --global-danger-block-text: #b9f6ff;
+  --global-danger-block-title: #e0fdff;
 
-  /* Optional glow for headings and links */
-  h1, h2, h3, h4, h5, h6, a, .post-title {
-    color: var(--global-text-color);
-    text-shadow: 0 0 6px rgba(103, 232, 249, 0.6);
-  }
-
+  /* Text & headings */
   body {
     background-color: var(--global-bg-color);
     color: var(--global-text-color);
   }
 
+  h1, h2, h3, h4, h5, h6, a, .post-title {
+    color: var(--global-text-color);
+    text-shadow: 0 0 8px rgba(185, 246, 255, 0.8);
+  }
+
+  a:hover, h1:hover, h2:hover, h3:hover {
+    text-shadow: 0 0 14px rgba(224, 253, 255, 0.9);
+    transition: text-shadow 0.15s ease;
+  }
+
+  /* Back-to-top button */
   #back-to-top {
     color: var(--global-back-to-top-text-color);
     background: var(--global-back-to-top-bg-color);
@@ -74,8 +80,11 @@
     z-index: $back-to-top-z-index;
   }
 
-  .only-light { display: block; }
-  .only-dark { display: none; }
+  /* Light/dark toggles disabled */
+  #light-toggle-system, #light-toggle-dark, #light-toggle-light {
+    display: none;
+  }
 
-  #light-toggle-system, #light-toggle-dark, #light-toggle-light { display: none; }
+  .only-light { display: block; }
+  .only-dark  { display: none; }
 }

@@ -1,40 +1,57 @@
-// Colours – Electric Cyan & Deep Indigo palette
+/*******************************************************************************
+ * Variables used throughout the theme.
+ * Electric-Cyan / Deep-Blue palette
+ ******************************************************************************/
+
 @use "sass:color";
 
+// Core palette
 $red-color: #ff3636 !default;
 $red-color-dark: #b71c1c !default;
 $orange-color: #f29105 !default;
 
-/* Core palette */
-$blue-color: #1e3a8a !default;           // deep indigo-blue
-$blue-color-dark: #1e1b4b !default;      // darker indigo tone
-$cyan-color: #67e8f9 !default;           // bright electric cyan
-$light-cyan-color: #a5f3fc !default;     // near-white cyan for highlights
+// Base chromatic scheme
+$blue-color: #0b1120 !default;          // very dark blue-indigo
+$blue-color-dark: #000814 !default;     // almost-black deep blue
+$cyan-color: #b9f6ff !default;          // pale, near-white cyan
+$light-cyan-color: #e0fdff !default;    // faint cyan for highlights
 
-/* Secondary tints */
+// Secondary tints (unused but kept for consistency)
 $green-color: #00ab37 !default;
 $green-color-lime: #b7d12a !default;
 $green-color-dark: #009f06 !default;
 $green-color-light: #ddffdd !default;
 $green-color-bright: #11d68b !default;
 
-/* Muted and legacy */
-$purple-color: #312e81 !default;         // darker indigo (used where "purple" appears)
+// Indigo substitution for legacy purple
+$purple-color: #312e81 !default;        // indigo
 $light-purple-color: #3730a3 !default;
 $pink-color: #f92080 !default;
 $pink-color-light: #ffdddd !default;
 $yellow-color: #efcc00 !default;
 
-/* Greys and neutrals */
-$grey-color: #94a3b8 !default;           // slate grey (fits dark theme)
-$grey-color-light: color.adjust($grey-color, $lightness: 40%);
-$grey-color-dark: #0b0f25;               // dark navy-indigo
+// Greys & neutrals adjusted to blue-indigo scale
+$grey-color: #1e1b4b !default;
+$grey-color-light: #3730a3 !default;
+$grey-color-dark: #0a0d18 !default;
 $grey-900: #111633;
 
-/* Core background and text */
-$white-color: #a5f3fc !default;          // bright cyan replaces white
-$black-color: #010617 !default;          // deep navy-black
+// Bright cyan replaces white completely
+$white-color: #b9f6ff !default;
+$black-color: #000814 !default;
 
-/* Theme colours for code blocks */
+// Code backgrounds
 $code-bg-color-light: rgba($blue-color, 0.1);
-$code-bg-color-dark: #111633 !default;
+$code-bg-color-dark: #0a1025 !default;
+
+// Font Awesome / Tabler paths
+$fa-font-path: "../webfonts";
+$ti-font-path: "../fonts";
+
+// Back To Top config
+$back-to-top-z-index: 10;
+$back-to-top-bottom: 30px;
+$back-to-top-right: 30px;
+$back-to-top-diameter: 40px;
+$back-to-top-height: $back-to-top-diameter;
+$back-to-top-width: $back-to-top-diameter;
