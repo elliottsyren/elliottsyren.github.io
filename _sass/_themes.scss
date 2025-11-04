@@ -1,139 +1,103 @@
-// ===========================================================
-//  ACTIVE THEME (Dark Mode Disabled)
-//  Single :root block controls all colour variables.
-// ===========================================================
+/*******************************************************************************
+ * Theme – Pale-Cyan on Deep-Blue / Indigo
+ * (dark/light mode disabled)
+ ******************************************************************************/
+
+@use "sass:color";
 
 :root {
-  // --- Base and text colours ---
-  --global-bg-color: #050616;
-  --global-code-bg-color: #1d1f5f;
-  --global-text-color: #00ffff;
-  --global-text-color-light: #66ffff;
+  color-scheme: dark;
 
-  // --- Accent and links ---
-  --global-theme-color: #00ffff;
-  --global-hover-color: #66ffff;
-  --global-hover-text-color: #050616;
-  --global-link-color: #00ffff;
-  --global-highlight-color: #00ffff;
+  /* Base surfaces */
+  --global-bg-color: #000814;            /* almost-black deep navy */
+  --global-code-bg-color: #0a1025;       /* slightly lighter blue */
+  --global-card-bg-color: #1e1b4b;       /* indigo for panels */
+  --global-border-color: #312e81;        /* darker indigo borders */
+  --global-divider-color: rgba(201, 252, 255, 0.2);
 
-  // --- Structure and depth ---
-  --global-card-bg-color: #1d1f5f;
-  --global-border-color: #2a2e80;
+  /* Text and links (no white anywhere) */
+  --global-text-color: #c9fcff;          /* bright pale cyan text */
+  --global-text-color-light: #e8feff;    /* lighter cyan for muted text */
+  --global-theme-color: #c9fcff;         /* main link/nav/icon colour */
+  --global-hover-color: #e8feff;         /* hover effect */
+  --global-hover-text-color: #c9fcff;
+  --global-link-color: #c9fcff;
+  --global-highlight-color: #e8feff;
 
-  // --- Footer, nav, and utilities ---
-  --global-footer-bg-color: #050616;
-  --global-footer-text-color: #00ffff;
-  --global-footer-link-color: #66ffff;
-  --global-back-to-top-bg-color: #2a2e80;
-  --global-back-to-top-text-color: #00ffff;
-  --global-newsletter-bg-color: #1d1f5f;
-  --global-newsletter-text-color: #00ffff;
+  /* Footer / nav / utilities */
+  --global-footer-bg-color: #0b0f25;
+  --global-footer-text-color: #c9fcff;
+  --global-footer-link-color: #e8feff;
+  --global-distill-app-color: #c9fcff;
 
-  // --- Optional callout blocks (consistent tone) ---
-  --global-tip-block-bg-color: #1d1f5f;
-  --global-warning-block-bg-color: #1d1f5f;
-  --global-danger-block-bg-color: #1d1f5f;
-}
+  --global-back-to-top-bg-color: rgba(201, 252, 255, 0.35);
+  --global-back-to-top-text-color: #c9fcff;
+  --global-newsletter-bg-color: #1e1b4b;
+  --global-newsletter-text-color: #e8feff;
 
-// ===========================================================
-//  TEXT AND LINK TREATMENT — No harsh glow, full cyan text.
-// ===========================================================
+  /* Info / warning / danger blocks */
+  --global-tip-block: #c9fcff;
+  --global-tip-block-bg: #1e1b4b;
+  --global-tip-block-text: #e8feff;
+  --global-tip-block-title: #e8feff;
 
-// Base text — ensure all components use cyan
-body,
-h1, h2, h3, h4, h5, h6,
-p, li, span, div {
-  color: var(--global-text-color) !important;
-}
+  --global-warning-block: #3730a3;
+  --global-warning-block-bg: #0b0f25;
+  --global-warning-block-text: #c9fcff;
+  --global-warning-block-title: #c9fcff;
 
-// Remove residual whites (e.g. from older selectors)
-* {
-  color: var(--global-text-color) !important;
-}
+  --global-danger-block: #312e81;
+  --global-danger-block-bg: #0b0f25;
+  --global-danger-block-text: #c9fcff;
+  --global-danger-block-title: #e8feff;
 
-// Links and interactive elements
-a,
-.nav-link,
-footer a,
-.social-icons a {
-  color: var(--global-link-color) !important;
-  text-shadow: none !important; // remove strong glow
-  transition: color 0.2s ease, text-shadow 0.2s ease;
-}
+  /* Typography and glow */
+  body {
+    background-color: var(--global-bg-color);
+    color: var(--global-text-color);
+  }
 
-a:hover,
-.nav-link:hover,
-footer a:hover,
-.social-icons a:hover {
-  color: var(--global-hover-color) !important;
-  text-shadow: 0 0 3px rgba(0, 255, 255, 0.25); // subtle, crisp glow
-}
+  h1, h2, h3, h4, h5, h6, a, .post-title {
+    color: var(--global-text-color);
+    text-shadow: 0 0 3px rgba(201, 252, 255, 0.4); /* subtle, not overpowering */
+  }
 
-// Navigation highlight (selected item)
-.nav-link.active,
-.nav-item.active > a {
-  color: var(--global-hover-color) !important;
-  border-bottom: 2px solid var(--global-hover-color);
-  text-shadow: 0 0 2px rgba(0, 255, 255, 0.25);
-}
+  a:hover, h1:hover, h2:hover, h3:hover {
+    text-shadow: 0 0 6px rgba(232, 254, 255, 0.6);
+    transition: text-shadow 0.15s ease;
+  }
 
-// Social icons / buttons hover effect
-.social-icons a:hover {
-  filter: drop-shadow(0 0 3px rgba(0, 255, 255, 0.3));
-}
+  /* Navbar and social icons use theme colour */
+  .navbar a,
+  .navbar-brand,
+  .social-icons a,
+  .nav-item.active > a {
+    color: var(--global-theme-color) !important;
+  }
+  .navbar a:hover,
+  .social-icons a:hover,
+  .nav-item.active > a:hover {
+    color: var(--global-hover-color) !important;
+  }
 
-// Optional: subtle cyan selection highlight
-::selection {
-  background: rgba(0, 255, 255, 0.3);
-  color: #050616;
-}
+  /* Back-to-top button */
+  #back-to-top {
+    color: var(--global-back-to-top-text-color);
+    background: var(--global-back-to-top-bg-color);
+    bottom: $back-to-top-bottom;
+    right: $back-to-top-right;
+    height: $back-to-top-height;
+    width: $back-to-top-width;
+    z-index: $back-to-top-z-index;
+  }
 
-// ===========================================================
-//  PANELS, CARDS, DIVIDERS — add visible indigo depth.
-// ===========================================================
+  /* Disable theme toggles (dark/light off) */
+  #light-toggle-system,
+  #light-toggle-dark,
+  #light-toggle-light {
+    display: none;
+  }
 
-.card,
-.panel,
-section,
-div[class*="card"],
-div[class*="panel"] {
-  background-color: var(--global-card-bg-color) !important;
-  border: 1px solid var(--global-border-color) !important;
-  box-shadow: 0 0 6px rgba(42, 46, 128, 0.4);
-  border-radius: 8px;
-  padding: 1rem;
-}
-
-// Footer consistency
-footer {
-  background-color: var(--global-footer-bg-color);
-  color: var(--global-footer-text-color);
-}
-
-footer a:hover {
-  color: var(--global-hover-color);
-}
-
-// ===========================================================
-//  CLEAN EDGE — no blurs, no excessive glow anywhere.
-// ===========================================================
-
-button,
-input,
-textarea {
-  color: var(--global-text-color);
-  background-color: var(--global-card-bg-color);
-  border: 1px solid var(--global-border-color);
-}
-
-button:hover,
-input:hover,
-textarea:hover,
-button:focus,
-input:focus,
-textarea:focus {
-  color: var(--global-hover-color);
-  border-color: var(--global-hover-color);
-  outline: none;
+  .only-light { display: block; }
+  .only-dark  { display: none; }
 }

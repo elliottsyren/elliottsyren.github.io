@@ -1,26 +1,55 @@
-// ===========================================================
-//  COLOUR PALETTE — UNIFIED (NO LIGHT/DARK VARIANTS)
-//  Use bright cyan for all text and accents; indigo for depth.
-// ===========================================================
+/*******************************************************************************
+ * Variables used throughout the theme.
+ * Neon-Cyan / Deep-Blue palette
+ ******************************************************************************/
 
-// Electric cyan — for text, links, and highlights
-$cyan-color: #00ffff !default;       // main neon cyan
-$light-cyan-color: #66ffff !default; // hover / lighter variant
+@use "sass:color";
 
-// Deep indigo tones — for structure, panels, borders
-$blue-color: #2a2e80 !default;
-$blue-color-dark: #1d1f5f !default;
+// Base palette
+$blue-color: #0b1120 !default;           // deep blue-indigo
+$blue-color-dark: #000814 !default;      // almost-black navy
+$cyan-color: #c9fcff !default;           // pale, near-white cyan
+$light-cyan-color: #e8feff !default;     // even lighter cyan for hover
 
-// Background base — deep navy (nearly black)
-$dark-bg-color: #050616 !default;
+// Secondary (keep for compatibility)
+$red-color: #ff3636 !default;
+$red-color-dark: #b71c1c !default;
+$orange-color: #f29105 !default;
+$green-color: #00ab37 !default;
+$green-color-lime: #b7d12a !default;
+$green-color-dark: #009f06 !default;
+$green-color-light: #ddffdd !default;
+$green-color-bright: #11d68b !default;
 
-// Replace whites entirely with cyan
-$white-color: $cyan-color !default;
+// Indigo for former "purple" refs
+$purple-color: #312e81 !default;
+$light-purple-color: #3730a3 !default;
+$pink-color: #f92080 !default;
+$pink-color-light: #ffdddd !default;
+$yellow-color: #efcc00 !default;
 
-// Code block backgrounds and secondary surfaces
-$code-bg-color-light: $blue-color-dark !default;
-$code-bg-color-dark:  $blue-color-dark !default;
+// Greys and neutrals tuned to dark-indigo base
+$grey-color: #1e1b4b !default;
+$grey-color-light: #3730a3 !default;
+$grey-color-dark: #0a0d18 !default;
+$grey-900: #111633;
 
-// Optional supporting variables (if referenced elsewhere)
-$gray-color: #101223 !default;
-$border-color: $blue-color !default;
+// Bright cyan replaces white completely
+$white-color: #c9fcff !default;
+$black-color: #000814 !default;
+
+// Code backgrounds
+$code-bg-color-light: rgba($blue-color, 0.1);
+$code-bg-color-dark: #0a1025 !default;
+
+// Font/icon paths
+$fa-font-path: "../webfonts";
+$ti-font-path: "../fonts";
+
+// Back-to-top button config
+$back-to-top-z-index: 10;
+$back-to-top-bottom: 30px;
+$back-to-top-right: 30px;
+$back-to-top-diameter: 40px;
+$back-to-top-height: $back-to-top-diameter;
+$back-to-top-width: $back-to-top-diameter;
