@@ -1,18 +1,25 @@
 /* ============================================================================
-   FINAL COLOUR OVERRIDE — Refined Cyan Text + Blue-Indigo Links + Solid Header
+   FINAL COLOUR OVERRIDE — Tertiary Blue Harmony
+   Deep Blue Base · Indigo-Blue Bridge · Pale Cyan Accent
    ============================================================================ */
 
 :root {
-  --global-bg-color: #000814;         /* deep navy background */
-  --global-card-bg-color: #1e1b4b;    /* indigo panels */
-  --global-border-color: #2d2a76;     /* indigo borders */
-  --global-text-color: #e7fdff;       /* bright cyan-white text */
-  --global-link-color: #5f7cff;       /* blue-indigo links */
-  --global-hover-color: #7d9bff;      /* lighter blue-indigo hover */
-  --global-active-color: #8ffcff;     /* soft cyan for active/current nav */
+  --base-blue: #000a1a;        /* deep, almost-black blue-violet */
+  --bridge-indigo: #5f78ff;    /* pale indigo-blue (blue-violet tertiary) */
+  --accent-cyan: #e5ffff;      /* near-white cyan (blue-green tertiary) */
+  --accent-cyan-strong: #8ffcff;
+  --border-indigo: #24306b;
+
+  --global-bg-color: var(--base-blue);
+  --global-card-bg-color: #0c1433;
+  --global-border-color: var(--border-indigo);
+  --global-text-color: var(--accent-cyan);
+  --global-link-color: var(--bridge-indigo);
+  --global-hover-color: var(--accent-cyan-strong);
+  --global-active-color: #a8f7ff; /* gentle active cyan */
 }
 
-/* --- Reset all text colours --- */
+/* --- Reset all text --- */
 html, body, p, li, span, strong, em,
 h1, h2, h3, h4, h5, h6,
 .navbar, .navbar a, .navbar-brand,
@@ -25,9 +32,9 @@ h1, h2, h3, h4, h5, h6,
   background-color: transparent;
 }
 
-/* --- Non-transparent fixed header --- */
+/* --- Solid navbar (no transparency) --- */
 .navbar {
-  background-color: var(--global-bg-color) !important;
+  background-color: var(--base-blue) !important;
   backdrop-filter: none !important;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
@@ -42,22 +49,19 @@ a:hover,
 .social-icons a:hover,
 .nav-item > a:hover {
   color: var(--global-hover-color) !important;
-  text-shadow: none !important;
-  filter: none !important;
   text-decoration: underline;
 }
 
-/* --- Highlight active (current) nav tab --- */
+/* --- Active (current) tab --- */
 .nav-item.active > a,
 .navbar-nav .nav-link.active,
 .navbar-nav .show > .nav-link {
-  color: var(--global-active-color) !important;  /* cyan nuance */
+  color: var(--global-active-color) !important; /* cyan nuance */
   font-weight: 600 !important;
-  text-decoration: none !important;
   border-bottom: 2px solid var(--global-active-color);
 }
 
-/* --- Remove Bootstrap’s white/grey utilities --- */
+/* --- General resets --- */
 [class*="text-white"],
 .text-light,
 .text-muted,
@@ -66,24 +70,21 @@ a:hover,
   color: var(--global-text-color) !important;
 }
 
-/* --- Background colour enforcement --- */
 body {
   background-color: var(--global-bg-color) !important;
 }
 
-/* --- Panels / cards --- */
 .card, .post-card, .highlight {
   background-color: var(--global-card-bg-color) !important;
   border-color: var(--global-border-color) !important;
 }
 
-/* --- Footer --- */
 footer {
-  background-color: var(--global-bg-color) !important;
+  background-color: var(--base-blue) !important;
   color: var(--global-text-color) !important;
 }
 
-/* --- Disable flicker / animation --- */
+/* --- Prevent flicker / transition hue --- */
 * {
   transition: none !important;
 }

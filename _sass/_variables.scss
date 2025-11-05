@@ -1,27 +1,31 @@
 /*******************************************************************************
- * Variables – Slightly More Cyan + Blue-Shifted Indigo
+ * Variables – Tertiary Blue Harmony (Deep Blue · Indigo-Blue · Pale Cyan)
  ******************************************************************************/
 
 @use "sass:color";
 
-$blue-color: #0b1120 !default;           // deep indigo-blue
-$blue-color-dark: #000814 !default;      // almost-black navy
-$cyan-color: #e7fdff !default;           // slightly more cyan text
-$light-cyan-color: #8ffcff !default;     // for highlights (active tab)
+$base-blue: #000a1a !default;
+$bridge-indigo: #5f78ff !default;
+$accent-cyan: #e5ffff !default;
+$accent-cyan-strong: #8ffcff !default;
+$border-indigo: #24306b !default;
 
-$purple-color: #5f7cff !default;         // blue-indigo link
-$light-purple-color: #7d9bff !default;   // hover indigo-blue
-
-$grey-color: #1e1b4b !default;
-$grey-color-light: #3730a3 !default;
-$grey-color-dark: #0a0d18 !default;
+$blue-color: $bridge-indigo;
+$blue-color-dark: $base-blue;
+$cyan-color: $accent-cyan;
+$light-cyan-color: $accent-cyan-strong;
+$purple-color: $bridge-indigo;
+$light-purple-color: color.adjust($bridge-indigo, $lightness: 10%);
+$grey-color: #1e1b4b;
+$grey-color-light: #2e2f61;
+$grey-color-dark: #0a0d18;
 $grey-900: #111633;
 
-$white-color: #e7fdff !default;
-$black-color: #000814 !default;
+$white-color: $accent-cyan;
+$black-color: $base-blue;
 
 $code-bg-color-light: rgba($blue-color, 0.08);
-$code-bg-color-dark: #0a1025 !default;
+$code-bg-color-dark: #0a1025;
 
 $fa-font-path: "../webfonts";
 $ti-font-path: "../fonts";

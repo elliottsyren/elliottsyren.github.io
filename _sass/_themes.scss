@@ -1,5 +1,6 @@
 /*******************************************************************************
- * Theme – Blue-Shifted Indigo + Brighter Cyan Text
+ * Theme – Tertiary Blue Harmony
+ * Deep Blue Base · Indigo-Blue Bridge · Pale Cyan Accent
  ******************************************************************************/
 
 @use "sass:color";
@@ -7,28 +8,28 @@
 :root {
   color-scheme: dark;
 
-  --global-bg-color: #000814;
+  --global-bg-color: #000a1a;
   --global-code-bg-color: #0a1025;
-  --global-card-bg-color: #1e1b4b;
-  --global-border-color: #2d2a76;
-  --global-divider-color: rgba(231, 253, 255, 0.15);
+  --global-card-bg-color: #0c1433;
+  --global-border-color: #24306b;
+  --global-divider-color: rgba(229, 255, 255, 0.15);
 
-  --global-text-color: #e7fdff;         /* slightly more cyan */
-  --global-text-color-light: #8ffcff;   /* for soft highlights */
-  --global-theme-color: #5f7cff;        /* indigo-blue links */
-  --global-hover-color: #7d9bff;        /* lighter hover */
-  --global-hover-text-color: #e7fdff;
-  --global-link-color: #5f7cff;
-  --global-highlight-color: #7d9bff;
+  --global-text-color: #e5ffff;
+  --global-text-color-light: #8ffcff;
+  --global-theme-color: #5f78ff;
+  --global-hover-color: #7d97ff;
+  --global-hover-text-color: #e5ffff;
+  --global-link-color: #5f78ff;
+  --global-highlight-color: #8ffcff;
 
-  --global-footer-bg-color: #0b0f25;
-  --global-footer-text-color: #e7fdff;
-  --global-footer-link-color: #7d9bff;
-  --global-distill-app-color: #5f7cff;
+  --global-footer-bg-color: #000a1a;
+  --global-footer-text-color: #e5ffff;
+  --global-footer-link-color: #7d97ff;
+  --global-distill-app-color: #5f78ff;
 
-  --global-back-to-top-bg-color: rgba(95, 124, 255, 0.3);
-  --global-back-to-top-text-color: #e7fdff;
-  --global-newsletter-bg-color: #1e1b4b;
+  --global-back-to-top-bg-color: rgba(95, 120, 255, 0.3);
+  --global-back-to-top-text-color: #e5ffff;
+  --global-newsletter-bg-color: #0c1433;
   --global-newsletter-text-color: #8ffcff;
 
   body {
@@ -39,7 +40,6 @@
   h1, h2, h3, h4, h5, h6, a, .post-title {
     color: var(--global-text-color);
     text-shadow: none;
-    filter: none;
   }
 
   a, .navbar a, .social-icons a, .nav-item > a {
@@ -50,7 +50,6 @@
     color: var(--global-hover-color);
   }
 
-  /* Active/current tab distinct cyan nuance */
   .nav-item.active > a,
   .navbar-nav .nav-link.active,
   .navbar-nav .show > .nav-link {
@@ -59,7 +58,6 @@
     font-weight: 600;
   }
 
-  /* Disable theme toggles */
   #light-toggle-system,
   #light-toggle-dark,
   #light-toggle-light {
