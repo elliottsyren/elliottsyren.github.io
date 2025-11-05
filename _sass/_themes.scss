@@ -1,6 +1,5 @@
 /*******************************************************************************
- * Theme – Bright Cyan-White Text & Pale Indigo Links
- * Matches custom-style.css
+ * Theme – Blue-Shifted Indigo + Brighter Cyan Text
  ******************************************************************************/
 
 @use "sass:color";
@@ -12,27 +11,26 @@
   --global-code-bg-color: #0a1025;
   --global-card-bg-color: #1e1b4b;
   --global-border-color: #2d2a76;
-  --global-divider-color: rgba(235, 255, 255, 0.15);
+  --global-divider-color: rgba(231, 253, 255, 0.15);
 
-  --global-text-color: #ebffff;
-  --global-text-color-light: #f6ffff;
-  --global-theme-color: #7c7cff;       /* pale indigo links */
-  --global-hover-color: #9b9bff;       /* lighter hover */
-  --global-hover-text-color: #ebffff;
-  --global-link-color: #7c7cff;
-  --global-highlight-color: #9b9bff;
+  --global-text-color: #e7fdff;         /* slightly more cyan */
+  --global-text-color-light: #8ffcff;   /* for soft highlights */
+  --global-theme-color: #5f7cff;        /* indigo-blue links */
+  --global-hover-color: #7d9bff;        /* lighter hover */
+  --global-hover-text-color: #e7fdff;
+  --global-link-color: #5f7cff;
+  --global-highlight-color: #7d9bff;
 
   --global-footer-bg-color: #0b0f25;
-  --global-footer-text-color: #ebffff;
-  --global-footer-link-color: #9b9bff;
-  --global-distill-app-color: #7c7cff;
+  --global-footer-text-color: #e7fdff;
+  --global-footer-link-color: #7d9bff;
+  --global-distill-app-color: #5f7cff;
 
-  --global-back-to-top-bg-color: rgba(124, 124, 255, 0.3);
-  --global-back-to-top-text-color: #ebffff;
+  --global-back-to-top-bg-color: rgba(95, 124, 255, 0.3);
+  --global-back-to-top-text-color: #e7fdff;
   --global-newsletter-bg-color: #1e1b4b;
-  --global-newsletter-text-color: #f6ffff;
+  --global-newsletter-text-color: #8ffcff;
 
-  /* Base text – neutral, no glow */
   body {
     background-color: var(--global-bg-color);
     color: var(--global-text-color);
@@ -46,20 +44,19 @@
 
   a, .navbar a, .social-icons a, .nav-item > a {
     color: var(--global-theme-color);
-    text-shadow: none;
   }
 
   a:hover, .navbar a:hover, .social-icons a:hover, .nav-item > a:hover {
     color: var(--global-hover-color);
-    text-shadow: none;
   }
 
-  /* Specific override for active tab (lighter tone) */
+  /* Active/current tab distinct cyan nuance */
   .nav-item.active > a,
   .navbar-nav .nav-link.active,
   .navbar-nav .show > .nav-link {
-    color: #8686ff;
-    text-shadow: none;
+    color: #8ffcff !important;
+    border-bottom: 2px solid #8ffcff;
+    font-weight: 600;
   }
 
   /* Disable theme toggles */

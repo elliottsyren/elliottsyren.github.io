@@ -1,14 +1,15 @@
 /* ============================================================================
-   FINAL COLOUR OVERRIDE — Bright Cyan-White Text + Refined Pale Indigo Links
+   FINAL COLOUR OVERRIDE — Refined Cyan Text + Blue-Indigo Links + Solid Header
    ============================================================================ */
 
 :root {
-  --global-bg-color: #000814;
-  --global-card-bg-color: #1e1b4b;
-  --global-border-color: #2d2a76;
-  --global-text-color: #ebffff;       /* near-white cyan text */
-  --global-link-color: #7c7cff;       /* pale indigo link */
-  --global-hover-color: #9b9bff;      /* slightly lighter hover */
+  --global-bg-color: #000814;         /* deep navy background */
+  --global-card-bg-color: #1e1b4b;    /* indigo panels */
+  --global-border-color: #2d2a76;     /* indigo borders */
+  --global-text-color: #e7fdff;       /* bright cyan-white text */
+  --global-link-color: #5f7cff;       /* blue-indigo links */
+  --global-hover-color: #7d9bff;      /* lighter blue-indigo hover */
+  --global-active-color: #8ffcff;     /* soft cyan for active/current nav */
 }
 
 /* --- Reset all text colours --- */
@@ -22,6 +23,13 @@ h1, h2, h3, h4, h5, h6,
   text-shadow: none !important;
   filter: none !important;
   background-color: transparent;
+}
+
+/* --- Non-transparent fixed header --- */
+.navbar {
+  background-color: var(--global-bg-color) !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 /* --- Links --- */
@@ -39,12 +47,14 @@ a:hover,
   text-decoration: underline;
 }
 
-/* --- Specific: active (selected) navbar tab --- */
+/* --- Highlight active (current) nav tab --- */
 .nav-item.active > a,
 .navbar-nav .nav-link.active,
 .navbar-nav .show > .nav-link {
-  color: #8686ff !important;  /* softer mid-indigo for active tab */
+  color: var(--global-active-color) !important;  /* cyan nuance */
+  font-weight: 600 !important;
   text-decoration: none !important;
+  border-bottom: 2px solid var(--global-active-color);
 }
 
 /* --- Remove Bootstrap’s white/grey utilities --- */
