@@ -1,24 +1,25 @@
 /* ============================================================================
-   FINAL COLOUR OVERRIDE — Deep Ocean Contrast
-   Deep Dark Blue · Pale Turquoise · Muted Spring Green
+   FINAL COLOUR OVERRIDE — Tertiary Blue Harmony
+   Deep Blue Base · Indigo-Blue Bridge · Pale Cyan Accent
    ============================================================================ */
 
 :root {
-  --base-blue: #0B1C2C;        /* deep navy-blue base */
-  --accent-turquoise: #CFF4F0; /* pale turquoise (highlight) */
-  --bridge-green: #BFD8A1;     /* muted spring green (secondary accent) */
-  --border-blue: #16324b;      /* softened edge tone */
+  --base-blue: #000a1a;        /* deep, almost-black blue-violet */
+  --bridge-indigo: #5f78ff;    /* pale indigo-blue (blue-violet tertiary) */
+  --accent-cyan: #e5ffff;      /* near-white cyan (blue-green tertiary) */
+  --accent-cyan-strong: #8ffcff;
+  --border-indigo: #24306b;
 
   --global-bg-color: var(--base-blue);
-  --global-card-bg-color: #10293f;
-  --global-border-color: var(--border-blue);
-  --global-text-color: var(--accent-turquoise);
-  --global-link-color: var(--bridge-green);
-  --global-hover-color: #d6f8f4; /* slightly brighter turquoise */
-  --global-active-color: #b8d49a; /* lighter spring green nuance */
+  --global-card-bg-color: #0c1433;
+  --global-border-color: var(--border-indigo);
+  --global-text-color: var(--accent-cyan);
+  --global-link-color: var(--bridge-indigo);
+  --global-hover-color: var(--accent-cyan-strong);
+  --global-active-color: #a8f7ff; /* gentle active cyan */
 }
 
-/* --- Reset all text colours --- */
+/* --- Reset all text --- */
 html, body, p, li, span, strong, em,
 h1, h2, h3, h4, h5, h6,
 .navbar, .navbar a, .navbar-brand,
@@ -31,7 +32,7 @@ h1, h2, h3, h4, h5, h6,
   background-color: transparent;
 }
 
-/* --- Non-transparent fixed header --- */
+/* --- Solid navbar (no transparency) --- */
 .navbar {
   background-color: var(--base-blue) !important;
   backdrop-filter: none !important;
@@ -51,16 +52,16 @@ a:hover,
   text-decoration: underline;
 }
 
-/* --- Active/current nav tab --- */
+/* --- Active (current) tab --- */
 .nav-item.active > a,
 .navbar-nav .nav-link.active,
 .navbar-nav .show > .nav-link {
-  color: var(--global-active-color) !important; /* muted spring green nuance */
+  color: var(--global-active-color) !important; /* cyan nuance */
   font-weight: 600 !important;
   border-bottom: 2px solid var(--global-active-color);
 }
 
-/* --- Remove Bootstrap’s white/grey utilities --- */
+/* --- General resets --- */
 [class*="text-white"],
 .text-light,
 .text-muted,
@@ -69,7 +70,6 @@ a:hover,
   color: var(--global-text-color) !important;
 }
 
-/* --- Background and panels --- */
 body {
   background-color: var(--global-bg-color) !important;
 }
@@ -79,13 +79,12 @@ body {
   border-color: var(--global-border-color) !important;
 }
 
-/* --- Footer --- */
 footer {
   background-color: var(--base-blue) !important;
   color: var(--global-text-color) !important;
 }
 
-/* --- Disable flicker / animation --- */
+/* --- Prevent flicker / transition hue --- */
 * {
   transition: none !important;
 }
