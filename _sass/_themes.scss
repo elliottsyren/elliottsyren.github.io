@@ -1,5 +1,6 @@
 /*******************************************************************************
- * Theme — Deep Ocean Contrast (single-theme, no glow)
+ * Theme – Tertiary Blue Harmony
+ * Deep Blue Base · Indigo-Blue Bridge · Pale Cyan Accent
  ******************************************************************************/
 
 @use "sass:color";
@@ -7,56 +8,65 @@
 :root {
   color-scheme: dark;
 
-  /* Surfaces & structure */
-  --global-bg-color: #000814;
-  --global-code-bg-color: #0C1525;
-  --global-card-bg-color: #0C1525;
-  --global-border-color: #1A2B40;
-  --global-divider-color: rgba(227, 255, 255, 0.15);
+  --global-bg-color: #000a1a;
+  --global-code-bg-color: #0a1025;
+  --global-card-bg-color: #0c1433;
+  --global-border-color: #24306b;
+  --global-divider-color: rgba(229, 255, 255, 0.15);
 
-  /* Typography & accents */
-  --global-text-color: #E3FFFF;   /* pale turquoise text */
-  --global-text-color-light: #C9F8F2;
-  --global-theme-color: #4AA3A1;  /* bridge teal (links) */
-  --global-hover-color: #63B6B4;  /* hover teal */
-  --global-hover-text-color: #E3FFFF;
-  --global-link-color: #4AA3A1;
-  --global-highlight-color: #B7E6B0; /* optional highlight */
+  --global-text-color: #e5ffff;
+  --global-text-color-light: #8ffcff;
+  --global-theme-color: #5f78ff;
+  --global-hover-color: #7d97ff;
+  --global-hover-text-color: #e5ffff;
+  --global-link-color: #5f78ff;
+  --global-highlight-color: #8ffcff;
 
-  /* Footer / misc */
-  --global-footer-bg-color: #000814;
-  --global-footer-text-color: #E3FFFF;
-  --global-footer-link-color: #4AA3A1;
-  --global-distill-app-color: #4AA3A1;
+  --global-footer-bg-color: #000a1a;
+  --global-footer-text-color: #e5ffff;
+  --global-footer-link-color: #7d97ff;
+  --global-distill-app-color: #5f78ff;
 
-  --global-back-to-top-bg-color: rgba(74, 163, 161, 0.3);
-  --global-back-to-top-text-color: #E3FFFF;
-  --global-newsletter-bg-color: #0C1525;
-  --global-newsletter-text-color: #E3FFFF;
+  --global-back-to-top-bg-color: rgba(95, 120, 255, 0.3);
+  --global-back-to-top-text-color: #e5ffff;
+  --global-newsletter-bg-color: #0c1433;
+  --global-newsletter-text-color: #8ffcff;
 
-  /* Base selectors (no glow) */
-  body { background-color: var(--global-bg-color); color: var(--global-text-color); }
-  h1, h2, h3, h4, h5, h6, a, .post-title { color: var(--global-text-color); text-shadow: none; filter: none; }
+  body {
+    background-color: var(--global-bg-color);
+    color: var(--global-text-color);
+  }
 
-  /* Links / hover (bridge teal) */
-  a, .navbar a, .social-icons a, .nav-item > a { color: var(--global-theme-color); }
-  a:hover, .navbar a:hover, .social-icons a:hover, .nav-item > a:hover { color: var(--global-hover-color); }
+  h1, h2, h3, h4, h5, h6, a, .post-title {
+    color: var(--global-text-color);
+    text-shadow: none;
+  }
 
-  /* Active/current nav item: spring-green nuance (only here) */
+  a, .navbar a, .social-icons a, .nav-item > a {
+    color: var(--global-theme-color);
+  }
+
+  a:hover, .navbar a:hover, .social-icons a:hover, .nav-item > a:hover {
+    color: var(--global-hover-color);
+  }
+
   .nav-item.active > a,
   .navbar-nav .nav-link.active,
   .navbar-nav .show > .nav-link {
-    color: #B7E6B0 !important;
-    border-bottom: 2px solid #B7E6B0;
+    color: #8ffcff !important;
+    border-bottom: 2px solid #8ffcff;
     font-weight: 600;
   }
 
-  /* Disable theme toggles (single theme) */
-  #light-toggle-system, #light-toggle-dark, #light-toggle-light { display: none; }
+  #light-toggle-system,
+  #light-toggle-dark,
+  #light-toggle-light {
+    display: none;
+  }
+
   .only-light { display: block; }
   .only-dark  { display: none; }
 
-  /* Back-to-top */
   #back-to-top {
     color: var(--global-back-to-top-text-color);
     background: var(--global-back-to-top-bg-color);
@@ -67,6 +77,3 @@
     z-index: $back-to-top-z-index;
   }
 }
-
-/* Non-transparent header inside SCSS as well (belt & braces with custom CSS) */
-.navbar { background-color: var(--global-bg-color) !important; box-shadow: 0 0 6px rgba(0,0,0,.4); }

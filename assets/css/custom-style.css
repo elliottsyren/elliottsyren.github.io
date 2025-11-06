@@ -1,158 +1,90 @@
 /* ============================================================================
-   Deep Ocean Contrast — Final Layer Override
-   Base: Deep Navy (#000814)
-   Text: Pale Turquoise (#E3FFFF)   [legible, slightly-cyan white]
-   Bridge (links): Blue-Green Teal (#4AA3A1)
-   Active highlight: Muted Spring Green (#B7E6B0)
+   FINAL COLOUR OVERRIDE — Tertiary Blue Harmony
+   Deep Blue Base · Indigo-Blue Bridge · Pale Cyan Accent
    ============================================================================ */
 
 :root {
-  --base-blue: #000814;
-  --text-turquoise: #E3FFFF;
-  --link-teal: #4AA3A1;
-  --hover-teal: #63b6b4;
-  --active-green: #B7E6B0;
-  --card-blue: #0c1525;
-  --border-navy: #1a2b40;
-  --divider-cyan: rgba(227, 255, 255, 0.15);
+  --base-blue: #000a1a;        /* deep, almost-black blue-violet */
+  --bridge-indigo: #5f78ff;    /* pale indigo-blue (blue-violet tertiary) */
+  --accent-cyan: #e5ffff;      /* near-white cyan (blue-green tertiary) */
+  --accent-cyan-strong: #8ffcff;
+  --border-indigo: #24306b;
 
-  /* map to theme tokens used around the site */
   --global-bg-color: var(--base-blue);
-  --global-text-color: var(--text-turquoise);
-  --global-link-color: var(--link-teal);
-  --global-hover-color: var(--hover-teal);
-  --global-active-color: var(--active-green);
-  --global-card-bg-color: var(--card-blue);
-  --global-border-color: var(--border-navy);
-  --global-divider-color: var(--divider-cyan);
+  --global-card-bg-color: #0c1433;
+  --global-border-color: var(--border-indigo);
+  --global-text-color: var(--accent-cyan);
+  --global-link-color: var(--bridge-indigo);
+  --global-hover-color: var(--accent-cyan-strong);
+  --global-active-color: #a8f7ff; /* gentle active cyan */
 }
 
-/* --- Base text & surfaces (kill glow, enforce colours) --- */
-html, body,
-p, li, span, strong, em,
+/* --- Reset all text --- */
+html, body, p, li, span, strong, em,
 h1, h2, h3, h4, h5, h6,
-.post-title, .post-content {
+.navbar, .navbar a, .navbar-brand,
+.nav-item > a, footer, footer a,
+.social-icons a, .post-title, .post-content,
+.card, .card-body {
   color: var(--global-text-color) !important;
   text-shadow: none !important;
   filter: none !important;
-  background: transparent;
+  background-color: transparent;
 }
-body { background-color: var(--global-bg-color) !important; }
 
-/* --- Solid non-transparent header (mobile-safe) --- */
-.navbar,
-.navbar.navbar-expand,
-.navbar.navbar-expand-lg,
-.navbar.navbar-dark,
-.navbar.navbar-light {
-  background-color: var(--global-bg-color) !important;
+/* --- Solid navbar (no transparency) --- */
+.navbar {
+  background-color: var(--base-blue) !important;
   backdrop-filter: none !important;
-  box-shadow: 0 0 6px rgba(0,0,0,.4);
-}
-.navbar a,
-.navbar-brand,
-.navbar .nav-link {
-  color: var(--global-text-color) !important;
-  text-shadow: none !important;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
-/* --- Links (bridge teal), hover, visited --- */
-a, a:visited, a:active,
-.navbar a, .social-icons a,
-.nav-item > a, .dropdown-item {
+/* --- Links --- */
+a, a:visited, a:active {
   color: var(--global-link-color) !important;
   text-decoration: none;
 }
 a:hover,
 .navbar a:hover,
 .social-icons a:hover,
-.nav-item > a:hover,
-.dropdown-item:hover {
+.nav-item > a:hover {
   color: var(--global-hover-color) !important;
   text-decoration: underline;
 }
 
-/* --- CURRENT/ACTIVE nav item: gentle spring-green highlight only here --- */
+/* --- Active (current) tab --- */
 .nav-item.active > a,
 .navbar-nav .nav-link.active,
 .navbar-nav .show > .nav-link {
-  color: var(--global-active-color) !important;
+  color: var(--global-active-color) !important; /* cyan nuance */
   font-weight: 600 !important;
-  text-decoration: none !important;
   border-bottom: 2px solid var(--global-active-color);
 }
 
-/* --- Dropdown menu theming --- */
-.dropdown-menu {
-  background-color: var(--global-bg-color) !important;
-  border: 1px solid var(--global-border-color) !important;
-}
-.dropdown-item {
+/* --- General resets --- */
+[class*="text-white"],
+.text-light,
+.text-muted,
+.text-body,
+.text-secondary {
   color: var(--global-text-color) !important;
 }
-.dropdown-item.active, .dropdown-item:active {
-  color: var(--global-active-color) !important;
-  background: transparent !important;
+
+body {
+  background-color: var(--global-bg-color) !important;
 }
 
-/* --- Buttons (subtle): primary uses bridge teal, outline uses border navy --- */
-.btn, .btn-primary, .btn-outline-primary {
-  border-color: var(--global-border-color) !important;
-  color: var(--global-link-color) !important;
-  background: transparent !important;
-}
-.btn:hover, .btn-primary:hover, .btn-outline-primary:hover {
-  color: var(--global-hover-color) !important;
-  border-color: var(--global-hover-color) !important;
-}
-
-/* --- Pagination --- */
-.pagination .page-link {
-  color: var(--global-link-color) !important;
-  background: transparent !important;
-  border-color: var(--global-border-color) !important;
-}
-.pagination .page-item.active .page-link {
-  color: var(--global-active-color) !important;
-  border-color: var(--global-active-color) !important;
-}
-
-/* --- Code blocks, cards, tables --- */
-.card, .post-card, .highlight, pre, code, kbd, samp {
+.card, .post-card, .highlight {
   background-color: var(--global-card-bg-color) !important;
   border-color: var(--global-border-color) !important;
-  color: var(--global-text-color) !important;
 }
-table, .table, .table-bordered, .table-striped {
-  color: var(--global-text-color) !important;
-  border-color: var(--global-border-color) !important;
-}
-th, td { border-color: var(--global-border-color) !important; }
 
-/* --- Footer --- */
 footer {
-  background-color: var(--global-bg-color) !important;
-  color: var(--global-text-color) !important;
-}
-footer a { color: var(--global-link-color) !important; }
-footer a:hover { color: var(--global-hover-color) !important; }
-
-/* --- Utilities that often force white/grey --- */
-[class*="text-white"],
-.text-light, .text-muted, .text-body, .text-secondary {
+  background-color: var(--base-blue) !important;
   color: var(--global-text-color) !important;
 }
 
-/* --- Focus ring & selection --- */
-:focus, .btn:focus, .form-control:focus, .nav-link:focus {
-  outline: 2px solid var(--global-border-color) !important;
-  box-shadow: none !important;
+/* --- Prevent flicker / transition hue --- */
+* {
+  transition: none !important;
 }
-::selection {
-  background: rgba(99,182,180,.35); /* hover teal tint */
-  color: var(--global-text-color);
-}
-
-/* --- Optional: keep micro-animations elsewhere but avoid colour flicker --- */
-/* Comment this out if you want transitions back. */
-* { transition: none !important; }
