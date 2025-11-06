@@ -1,35 +1,47 @@
 /*******************************************************************************
- * Variables – Tertiary Blue Harmony (Deep Blue · Indigo-Blue · Pale Cyan)
+ * Variables — Deep Ocean Contrast (compiler-level)
+ * Base: Deep Navy (#000814)
+ * Text: Pale Turquoise (#E3FFFF)
+ * Bridge (links): Teal (#4AA3A1)
+ * Active: Spring Green (#B7E6B0)
  ******************************************************************************/
 
 @use "sass:color";
 
-$base-blue: #000a1a !default;
-$bridge-indigo: #5f78ff !default;
-$accent-cyan: #e5ffff !default;
-$accent-cyan-strong: #8ffcff !default;
-$border-indigo: #24306b !default;
+$base-blue: #000814 !default;
+$text-turquoise: #E3FFFF !default;
+$link-teal: #4AA3A1 !default;
+$hover-teal: #63B6B4 !default;
+$active-green: #B7E6B0 !default;
 
-$blue-color: $bridge-indigo;
+$card-blue: #0C1525 !default;
+$border-navy: #1A2B40 !default;
+
+/* Map legacy theme tokens so internals don’t reintroduce purple/white */
+$blue-color: $link-teal;        /* used by some components */
 $blue-color-dark: $base-blue;
-$cyan-color: $accent-cyan;
-$light-cyan-color: $accent-cyan-strong;
-$purple-color: $bridge-indigo;
-$light-purple-color: color.adjust($bridge-indigo, $lightness: 10%);
-$grey-color: #1e1b4b;
-$grey-color-light: #2e2f61;
-$grey-color-dark: #0a0d18;
-$grey-900: #111633;
+$cyan-color: $text-turquoise;
+$light-cyan-color: $active-green;
 
-$white-color: $accent-cyan;
+$purple-color: $link-teal;      /* steer old "purple" refs into teal family */
+$light-purple-color: color.adjust($link-teal, $lightness: 8%);
+
+$grey-color: #1a2e43;
+$grey-color-light: #29445a;
+$grey-color-dark: #08141f;
+$grey-900: #10202e;
+
+$white-color: $text-turquoise;  /* eliminate pure white */
 $black-color: $base-blue;
 
-$code-bg-color-light: rgba($blue-color, 0.08);
-$code-bg-color-dark: #0a1025;
+/* Code backgrounds */
+$code-bg-color-light: rgba($base-blue, 0.1);
+$code-bg-color-dark: $card-blue;
 
 $fa-font-path: "../webfonts";
 $ti-font-path: "../fonts";
 
+/* Back To Top */
 $back-to-top-z-index: 10;
 $back-to-top-bottom: 30px;
 $back-to-top-right: 30px;
