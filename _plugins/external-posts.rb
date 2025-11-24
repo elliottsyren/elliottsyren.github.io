@@ -1,6 +1,4 @@
 require 'feedjira'
-require 'feedjira/parser/rss'
-require 'feedjira/parser/atom'
 require 'httparty'
 require 'jekyll'
 require 'nokogiri'
