@@ -1,6 +1,4 @@
 require 'feedjira'
-require 'feedjira/parser/rss'
-require 'feedjira/parser/atom'
 require 'httparty'
 require 'jekyll'
 require 'nokogiri'
@@ -27,10 +25,7 @@ module ExternalPosts
     def fetch_from_rss(site, src)
       xml = HTTParty.get(src['rss_url']).body
       return if xml.nil?
-
-      # IMPORTANT: Use Feedjira::Feed.parse instead of Feedjira.parse
-      feed = Feedjira::Feed.parse(xml)
-
+      feed = Feedjira.parse(xml)
       process_entries(site, src, feed.entries)
     end
 
@@ -47,9 +42,12 @@ module ExternalPosts
     end
 
     def create_document(site, source_name, url, content)
+      # check if title is composed only of whitespace or foreign characters
       if content[:title].gsub(/[^\w]/, '').strip.empty?
+        # use the source name and last url segment as fallback
         slug = "#{source_name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}-#{url.split('/').last}"
       else
+        # parse title from the post or use the source name and last url segment as fallback
         slug = content[:title].downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
         slug = "#{source_name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}-#{url.split('/').last}" if slug.empty?
       end
@@ -58,7 +56,6 @@ module ExternalPosts
       doc = Jekyll::Document.new(
         path, { :site => site, :collection => site.collections['posts'] }
       )
-
       doc.data['external_source'] = source_name
       doc.data['title'] = content[:title]
       doc.data['feed_content'] = content[:content]
@@ -66,7 +63,6 @@ module ExternalPosts
       doc.data['date'] = content[:published]
       doc.data['redirect'] = url
       doc.content = content[:content]
-
       site.collections['posts'].docs << doc
     end
 
@@ -95,9 +91,9 @@ module ExternalPosts
       parsed_html = Nokogiri::HTML(html)
 
       title = parsed_html.at('head title')&.text.strip || ''
-      description = parsed_html.at('head meta[name=\"description\"]')&.attr('content')
-      description ||= parsed_html.at('head meta[name=\"og:description\"]')&.attr('content')
-      description ||= parsed_html.at('head meta[property=\"og:description\"]')&.attr('content')
+      description = parsed_html.at('head meta[name="description"]')&.attr('content')
+      description ||= parsed_html.at('head meta[name="og:description"]')&.attr('content')
+      description ||= parsed_html.at('head meta[property="og:description"]')&.attr('content')
 
       body_content = parsed_html.search('p').map { |e| e.text }
       body_content = body_content.join() || ''
@@ -106,7 +102,9 @@ module ExternalPosts
         title: title,
         content: body_content,
         summary: description
+        # Note: The published date is now added in the fetch_from_urls method.
       }
     end
+
   end
 end
