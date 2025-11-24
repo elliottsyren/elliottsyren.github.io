@@ -88,10 +88,3 @@ footer {
 * {
   transition: none !important;
 }
-
-/* --- Hide the CV button in the bottom toolbar --- */
-.contact-icons a[href*="cv"],
-.contact-icons a[href*="CV"],
-.contact-icons a[href$=".pdf"] {
-  display: none !important;
-}
