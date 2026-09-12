@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Theme – Tertiary Blue Harmony
- * Deep Blue Base · Indigo-Blue Bridge · Pale Cyan Accent
+ * Theme — fixed three-colour palette
+ * Midnight blue (dark) · Pale turquoise (light/primary) · Pale lavender-grey (muted/secondary)
  ******************************************************************************/
 
 @use "sass:color";
@@ -8,29 +8,46 @@
 :root {
   color-scheme: dark;
 
-  --global-bg-color: #000a1a;
-  --global-code-bg-color: #0a1025;
-  --global-card-bg-color: #0c1433;
-  --global-border-color: #24306b;
-  --global-divider-color: rgba(229, 255, 255, 0.15);
+  --global-bg-color: #{$midnight-blue};
+  --global-code-bg-color: #{$midnight-blue-raised};
+  --global-card-bg-color: #{$midnight-blue-raised};
+  --global-border-color: #{rgba($pale-lavender-grey, 0.35)};
+  --global-divider-color: #{rgba($pale-lavender-grey, 0.15)};
 
-  --global-text-color: #e5ffff;
-  --global-text-color-light: #8ffcff;
-  --global-theme-color: #5f78ff;
-  --global-hover-color: #7d97ff;
-  --global-hover-text-color: #e5ffff;
-  --global-link-color: #5f78ff;
-  --global-highlight-color: #8ffcff;
+  --global-text-color: #{$pale-turquoise};
+  --global-text-color-light: #{$pale-lavender-grey};
+  --global-theme-color: #{$pale-lavender-grey};
+  --global-hover-color: #{$lavender-accent};
+  --global-hover-text-color: #{$midnight-blue};
+  --global-link-color: #{$pale-lavender-grey};
+  --global-highlight-color: #{$pale-turquoise};
 
-  --global-footer-bg-color: #000a1a;
-  --global-footer-text-color: #e5ffff;
-  --global-footer-link-color: #7d97ff;
-  --global-distill-app-color: #5f78ff;
+  --global-footer-bg-color: #{$midnight-blue};
+  --global-footer-text-color: #{$pale-lavender-grey};
+  --global-footer-link-color: #{$pale-lavender-grey};
+  --global-distill-app-color: #{$pale-lavender-grey};
 
-  --global-back-to-top-bg-color: rgba(95, 120, 255, 0.3);
-  --global-back-to-top-text-color: #e5ffff;
-  --global-newsletter-bg-color: #0c1433;
-  --global-newsletter-text-color: #8ffcff;
+  --global-back-to-top-bg-color: #{rgba($pale-lavender-grey, 0.3)};
+  --global-back-to-top-text-color: #{$pale-turquoise};
+  --global-newsletter-bg-color: #{$midnight-blue-raised};
+  --global-newsletter-text-color: #{$pale-lavender-grey};
+
+  // Tip/warning/danger callout blockquotes, differentiated by border weight and
+  // fill rather than by hue, since the palette is fixed to these three colours.
+  --global-tip-block: #{$pale-turquoise};
+  --global-tip-block-bg: #{$midnight-blue-raised};
+  --global-tip-block-text: #{$pale-turquoise};
+  --global-tip-block-title: #{$pale-turquoise};
+
+  --global-warning-block: #{$pale-lavender-grey};
+  --global-warning-block-bg: #{$midnight-blue-raised};
+  --global-warning-block-text: #{$pale-lavender-grey};
+  --global-warning-block-title: #{$pale-lavender-grey};
+
+  --global-danger-block: #{$pale-lavender-grey};
+  --global-danger-block-bg: #{$pale-lavender-grey};
+  --global-danger-block-text: #{$midnight-blue};
+  --global-danger-block-title: #{$midnight-blue};
 
   body {
     background-color: var(--global-bg-color);
@@ -53,19 +70,10 @@
   .nav-item.active > a,
   .navbar-nav .nav-link.active,
   .navbar-nav .show > .nav-link {
-    color: #8ffcff !important;
-    border-bottom: 2px solid #8ffcff;
+    color: var(--global-hover-color) !important;
+    border-bottom: 2px solid var(--global-hover-color);
     font-weight: 600;
   }
-
-  #light-toggle-system,
-  #light-toggle-dark,
-  #light-toggle-light {
-    display: none;
-  }
-
-  .only-light { display: block; }
-  .only-dark  { display: none; }
 
   #back-to-top {
     color: var(--global-back-to-top-text-color);

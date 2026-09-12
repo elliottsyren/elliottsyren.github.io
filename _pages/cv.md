@@ -16,7 +16,7 @@ description: Curriculum Vitae
   overflow: hidden;
 ">
   <iframe
-    src="/assets/pdf/cv.pdf#view=FitH"
+    src="{{ '/assets/pdf/cv.pdf' | relative_url }}#view=FitH"
     style="
       position: absolute;
       top: 0;
@@ -29,7 +29,7 @@ description: Curriculum Vitae
 </div>
 
 <p style="text-align: center; margin-top: 1em;">
-  <a href="/assets/pdf/cv.pdf" target="_blank" style="text-decoration: none;">
+  <a href="{{ '/assets/pdf/cv.pdf' | relative_url }}" target="_blank" style="text-decoration: none;">
     Download my full CV (PDF)
   </a>
 </p>

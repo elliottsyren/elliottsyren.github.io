@@ -1,31 +1,25 @@
 /*******************************************************************************
- * Variables – Tertiary Blue Harmony (Deep Blue · Indigo-Blue · Pale Cyan)
+ * Variables – fixed three-colour palette
  ******************************************************************************/
 
 @use "sass:color";
 
-$base-blue: #000a1a !default;
-$bridge-indigo: #5f78ff !default;
-$accent-cyan: #e5ffff !default;
-$accent-cyan-strong: #8ffcff !default;
-$border-indigo: #24306b !default;
+// The site's entire palette. Every other colour on the site is one of these
+// three, or a computed tint/shade of one of them.
+$midnight-blue: #050a15 !default; // near-black blue — backgrounds, dark surfaces
+$pale-turquoise: #e3fbf8 !default; // near-white turquoise — primary text, brightest accents
+$pale-lavender-grey: #9f98c2 !default; // muted secondary — links, borders, dividers
+$lavender-accent: #b190ea !default; // interactive emphasis only — hover, active nav, focus, selected items
 
-$blue-color: $bridge-indigo;
-$blue-color-dark: $base-blue;
-$cyan-color: $accent-cyan;
-$light-cyan-color: $accent-cyan-strong;
-$purple-color: $bridge-indigo;
-$light-purple-color: color.adjust($bridge-indigo, $lightness: 10%);
-$grey-color: #1e1b4b;
-$grey-color-light: #2e2f61;
-$grey-color-dark: #0a0d18;
-$grey-900: #111633;
+// Subtly "raised" surfaces (cards, code blocks) use a lightness-adjusted tint of
+// midnight blue rather than a new colour.
+$midnight-blue-raised: color.adjust($midnight-blue, $lightness: 3%);
 
-$white-color: $accent-cyan;
-$black-color: $base-blue;
+$white-color: $pale-turquoise;
+$black-color: $midnight-blue;
 
-$code-bg-color-light: rgba($blue-color, 0.08);
-$code-bg-color-dark: #0a1025;
+$code-bg-color-light: rgba($pale-lavender-grey, 0.08);
+$code-bg-color-dark: $midnight-blue-raised;
 
 $fa-font-path: "../webfonts";
 $ti-font-path: "../fonts";

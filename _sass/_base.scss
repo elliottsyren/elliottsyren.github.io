@@ -67,8 +67,10 @@ blockquote {
     margin-bottom: 0;
   }
 
-  /* Tips, warnings, and dangers blockquotes */
+  /* Tips, warnings, and dangers blockquotes: distinguished by border weight and
+     fill rather than hue, since the palette is fixed to three colours. */
   &.block-tip {
+    border-left-width: 5px;
     border-color: var(--global-tip-block);
     background-color: var(--global-tip-block-bg);
 
@@ -91,6 +93,7 @@ blockquote {
   }
 
   &.block-warning {
+    border-left-width: 8px;
     border-color: var(--global-warning-block);
     background-color: var(--global-warning-block-bg);
 
@@ -113,6 +116,7 @@ blockquote {
   }
 
   &.block-danger {
+    border-left-width: 12px;
     border-color: var(--global-danger-block);
     background-color: var(--global-danger-block-bg);
 
@@ -202,6 +206,7 @@ ul.task-list input[type="checkbox"] {
     margin-bottom: 5px;
     margin-top: 5px;
     font-family: monospace;
+    color: var(--global-text-color-light);
 
     p {
       display: inline-block;
@@ -397,7 +402,6 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-#light-toggle,
 #search-toggle {
   padding: 0;
   border: 0;
@@ -436,7 +440,7 @@ ul.task-list input[type="checkbox"] {
       }
 
       i::before {
-        color: var(--global-text-color);
+        color: var(--global-theme-color);
         transition-property: all 0.2s ease-in-out;
       }
 
@@ -444,7 +448,7 @@ ul.task-list input[type="checkbox"] {
         text-decoration: none;
 
         i::before {
-          color: var(--global-theme-color);
+          color: var(--global-hover-color);
         }
       }
     }
@@ -940,15 +944,6 @@ code {
   word-wrap: break-word;
 }
 
-// Transitioning Themes
-html.transition,
-html.transition *,
-html.transition *:before,
-html.transition *:after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
-}
-
 // Extra Markdown style (post Customization)
 .post {
   .post-meta {
@@ -1098,8 +1093,8 @@ nav[data-toggle="toc"] {
   }
 
   .nav-link.active {
-    color: var(--global-theme-color);
-    border-left-color: var(--global-theme-color);
+    color: var(--global-hover-color);
+    border-left-color: var(--global-hover-color);
     font-size: 0.75rem;
 
     &:hover {
@@ -1290,7 +1285,7 @@ ninja-keys::part(ninja-input-wrapper) {
 }
 
 .newsletter-form-input:focus {
-  border-color: var(--global-theme-color) !important;
+  border-color: var(--global-hover-color) !important;
 }
 
 .newsletter-form-button {
@@ -1419,79 +1414,6 @@ ninja-keys::part(ninja-input-wrapper) {
   color: var(--global-text-color);
 }
 
-figure.cover {
-  display: inline-block;
-  text-align: center;
-  margin: 0.5rem; /* adjust as needed */
-
-  img {
-    vertical-align: bottom;
-  }
-
-  figcaption.abandoned {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #ee5f5b;
-  }
-
-  figcaption.finished,
-  figcaption.watched {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #62c462;
-  }
-
-  figcaption.interested {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #7691db;
-  }
-
-  figcaption.paused {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #bdac7e;
-  }
-
-  figcaption.queued {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #9e76b5;
-  }
-
-  figcaption.reading,
-  figcaption.watching {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #f89406;
-  }
-
-  figcaption.reread,
-  figcaption.rewatch {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #a6517d;
-  }
-
-  figcaption.uncategorized {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #b0abb3;
-  }
-
-  /* mouse over link */
-  a.cover-link:hover {
-    color: #23212d !important;
-  }
-}
 
 mjx-container[jax="CHTML"][display="true"] {
   overflow-x: auto;

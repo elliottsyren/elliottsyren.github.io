@@ -35,9 +35,7 @@
 <link
   defer
   rel="stylesheet"
-  href="{{ '/assets/css/jekyll-pygments-themes-github.css' | relative_url | bust_file_cache }}"
-  media=""
-  id="highlight_theme_light"
+  href="{{ '/assets/css/jekyll-pygments-themes-native.css' | relative_url | bust_file_cache }}"
 >
 
 {% if page.toc and page.toc.sidebar %}
@@ -67,23 +65,9 @@
   <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url | bust_file_cache}}">
 {% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
-<link rel="stylesheet" href="{{ '/assets/css/custom-style.css' | relative_url | bust_file_cache }}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
-{% if site.enable_darkmode %}
-  <!-- Dark Mode -->
-  <script src="{{ '/assets/js/theme.js' | relative_url | bust_file_cache }}"></script>
-  <link
-    defer
-    rel="stylesheet"
-    href="{{ '/assets/css/jekyll-pygments-themes-native.css' | relative_url | bust_file_cache }}"
-    media="none"
-    id="highlight_theme_dark"
-  >
-  <script>
-    initTheme();
-  </script>
-{% endif %}
+<script src="{{ '/assets/js/theme.js' | relative_url | bust_file_cache }}"></script>
 
 {% if page.map %}
   <!-- GeoJSON support via Leaflet -->
@@ -101,18 +85,9 @@
   <link
     defer
     rel="stylesheet"
-    href="{{ site.third_party_libraries.highlightjs.url.css.light }}"
-    integrity="{{ site.third_party_libraries.highlightjs.integrity.css.light }}"
-    crossorigin="anonymous"
-    media="screen and (prefers-color-scheme: light)"
-  >
-  <link
-    defer
-    rel="stylesheet"
     href="{{ site.third_party_libraries.highlightjs.url.css.dark }}"
     integrity="{{ site.third_party_libraries.highlightjs.integrity.css.dark }}"
     crossorigin="anonymous"
-    media="screen and (prefers-color-scheme: dark)"
   >
   <link
     defer

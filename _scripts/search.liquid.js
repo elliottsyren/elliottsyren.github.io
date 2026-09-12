@@ -52,7 +52,7 @@ ninja.data = [
       {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
-  {%- if site.posts_in_search -%}
+  {%- if site.posts_in_search != false -%}
     {%- for post in site.posts -%}
       {
         {%- assign title = post.title | escape | strip -%}
@@ -100,7 +100,7 @@ ninja.data = [
       {%- endfor -%}
     {%- endif -%}
   {%- endfor -%}
-  {%- if site.socials_in_search -%}
+  {%- if site.socials_in_search != false -%}
     {%- for social in site.data.socials -%}
       {%- case social[0] -%}
         {%- when "acm_id" -%}
@@ -308,34 +308,5 @@ ninja.data = [
         },
       },
     {%- endfor -%}
-  {%- endif -%}
-  {%- if site.enable_darkmode -%}
-    {
-      id: 'light-theme',
-      title: 'Change theme to light',
-      description: 'Change the theme of the site to Light',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("light");
-      },
-    },
-    {
-      id: 'dark-theme',
-      title: 'Change theme to dark',
-      description: 'Change the theme of the site to Dark',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("dark");
-      },
-    },
-    {
-      id: 'system-theme',
-      title: 'Use system default theme',
-      description: 'Change the theme of the site to System Default',
-      section: 'Theme',
-      handler: () => {
-        setThemeSetting("system");
-      },
-    },
   {%- endif -%}
 ];
