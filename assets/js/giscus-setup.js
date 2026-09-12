@@ -1,7 +1,5 @@
 function determineGiscusTheme() {
-  
-    return "light";
-  
+  return "dark";
 }
 
 (function setupGiscus() {
