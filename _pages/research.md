@@ -2,7 +2,6 @@
 layout: page
 permalink: /research/
 title: research
-description: "Current research on labour market integration, human capital, and inequality among immigrants in Sweden."
 nav: true
 nav_order: 1
 ---
