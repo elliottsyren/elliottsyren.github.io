@@ -7,6 +7,10 @@ nav: true
 nav_order: 3
 ---
 
+### 2026
+- **Statistics I** - Bachelor's course (intro level)  
+- **Statistics II** - Bachelor's course (intermediate level)
+
 ### 2025
 - **Econometrics III** - PhD course  
 - **Statistics I** - Bachelor's course (intro level)  

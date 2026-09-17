@@ -27,7 +27,9 @@ latest_posts:
   limit: 0 # leave blank to include all the blog posts
 ---
 
-I'm a PhD student in Economics at the University of Gothenburg. My research focuses on labour market integration and human capital accumulation among newly arrived immigrants in Sweden. I'm particularly interested in how institutional settings and policy design influence integration through its effect on educational attainment, mental health, and employment outcomes.
+I'm a PhD student in Economics at the University of Gothenburg. My primary research interest is the integration of immigrants in Sweden, studied from an applied microeconomics perspective, particularly newly arrived immigrants' labour market integration and human capital accumulation. I'm especially interested in how institutional settings and policy design, including the administrative decisions immigrants navigate and the uncertainty these create, shape immigrants' educational attainment, mental health, employment, and broader integration efforts. More broadly, my work touches on questions of inequality within the economics of migration, (mental) health, crime, and education, and speaks to questions of general interest to labour and public economists, particularly in relation to integration and immigration policy.
+
+My supervisors are Professors Randi Hjalmarsson and Mikael Lindahl.
 
 Before starting my PhD, I obtained a bachelor's degree in statistics and a master's degree in economics, both from Uppsala University. 
 
