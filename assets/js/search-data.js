@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-research",
           title: "research",
-          description: "Current research on labour market integration, human capital, and inequality among immigrants in Sweden.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
